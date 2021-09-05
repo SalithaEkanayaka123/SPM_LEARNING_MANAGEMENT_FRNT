@@ -15,3 +15,7 @@ export const ADD_CLASS = 'ADD_CLASS';
 export const GET_CLASS = 'GET_CLASS';
 export const UPDATE_CLASS = 'UPDATE_CLASS';
 export const DELETE_CLASS = 'DELETE_CLASS';
+
+//Payment Realated
+export const ADD_PAYMENT = 'ADD_PAYMENT';
+export const GET_PAYMENT = 'GET_PAYMENT';

@@ -3,10 +3,10 @@ import './Login.css'
 import LoginLogo from './Images/LoginLogo.png';
 import LoginComponent from "./LoginComponent";
 
-function Login() {
+function Login(props) {
     return (
         <div>
-            <h1>Login page</h1>
+            <br/><br/><br/>
             <div className="login">
                 <div>
                     <img src= {LoginLogo}  className="login-image1"/>
@@ -16,7 +16,7 @@ function Login() {
                     <h4 className="login-info2-second">User1</h4>
                 </div>
                 <div className="login-info">
-                    <LoginComponent/>
+                    <LoginComponent setBackground={props.setBackground}/>
                 </div>
             </div>
 

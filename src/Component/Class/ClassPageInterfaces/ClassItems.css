@@ -1,0 +1,72 @@
+.all-class-section-row {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-auto-rows: minmax(1px, auto);
+  justify-content: left;
+  align-items: normal;
+  grid-gap: 5%;
+}
+
+.allclassitems {
+  display: flex;
+}
+
+.home-class-container-filter {
+  margin-left: 3%;
+}
+
+.input-field-updateemail-1 {
+  width: 937px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  border-radius: 13.48px;
+  padding: 1%;
+  margin-top: 3%;
+}
+
+.profileemailupdatebtn-1 {
+  position: absolute;
+  background-color: #7D7BE4;
+  border-color: white;
+  width: 217px;
+  height: 50px;
+  font-size: 15px;
+  margin-left: -10%;
+  border-radius: 14.6px;
+  margin-top: 3%;
+}
+
+.ClassSearch-background {
+  background-color: cornflowerblue;
+  margin-top: 1%;
+  margin-left: -5%;
+  opacity: 60%;
+}
+
+.all-classsearch-section-row {
+  display: block;
+  margin: auto;
+}
+
+.form-input-classsearch {
+  height: 83px;
+  width: 257px;
+  border-radius: 13.48px;
+  padding: 1%;
+}
+
+.classSearch-container-1 {
+  margin-left: -5%;
+}
+
+.classSearch-container-2 {
+  margin-left: 2%;
+}
+
+.classSearch-container-3 {
+  margin-left: 2%;
+}
+
+/*# sourceMappingURL=ClassItems.css.map */

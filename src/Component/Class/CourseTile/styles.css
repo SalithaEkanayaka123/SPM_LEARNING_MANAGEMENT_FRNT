@@ -1,0 +1,30 @@
+.course-tile-container {
+  width: 200px;
+  height: 200px;
+  background-color: #7D75A4;
+  border-radius: 30px;
+  margin: 1.5%;
+  position: relative;
+}
+.course-tile-container .top-container {
+  color: #FFFFFF;
+  padding: 10px;
+  text-align: right;
+}
+.course-tile-container .top-container .main-heading {
+  font-size: larger;
+  font-weight: bold;
+}
+.course-tile-container .top-container .sub-heading {
+  font-size: small;
+}
+.course-tile-container .image-container {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 28px;
+}
+.course-tile-container .image-container img {
+  width: 100px;
+}
+
+/*# sourceMappingURL=styles.css.map */

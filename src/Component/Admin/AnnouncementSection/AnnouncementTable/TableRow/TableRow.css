@@ -1,0 +1,36 @@
+.class-announcement-custom-row-container {
+  border-radius: 10px;
+  background-color: #525252;
+  padding: 10px;
+  margin-right: 10px;
+}
+.class-announcement-custom-row-container .class-announcement-custom-row-flex {
+  display: flex;
+}
+.class-announcement-custom-row-container .class-announcement-custom-row-flex .class-announcement-custom-row-header {
+  font-size: 20.6px;
+  font-weight: bold;
+  font-family: "Helvetica", "Verdana", serif;
+}
+.class-announcement-custom-row-container .class-announcement-custom-row-flex .class-announcement-custom-row-description {
+  font-size: 15.86px;
+  font-weight: normal;
+  margin-top: -8px;
+  margin-bottom: 9px;
+  font-family: "Helvetica", "Verdana", serif;
+}
+.class-announcement-custom-row-container .class-announcement-custom-row-flex .class-announcement-custom-row-posted-time {
+  font-size: 15px;
+  font-style: italic;
+  justify-content: right;
+  margin-left: 960px;
+  color: #9E9E9A;
+}
+.class-announcement-custom-row-container .class-announcement-custom-row-container-line {
+  background-color: #9E9E9A;
+  width: 1300px;
+  height: 3px;
+  color: #9E9E9A;
+}
+
+/*# sourceMappingURL=TableRow.css.map */

@@ -8,12 +8,16 @@
 }
 .tutor-profile-container .tutor-profile-name {
   font-size: 20px;
+  width: 200px;
+}
+.tutor-profile-container .tutor-profile-name {
+  font-size: x-large;
   color: #FFFFFF;
   font-weight: bold;
   margin-top: 5px;
 }
 .tutor-profile-container .tutor-profile-designation {
-  font-size: 15px;
+  font-size: larger;
   color: #A3A3A3;
   font-weight: normal;
 }

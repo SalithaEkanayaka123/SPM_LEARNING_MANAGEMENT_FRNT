@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { withStyles, Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,6 +12,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import {green} from "@material-ui/core/colors";
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
+import {useDispatch, useSelector} from "react-redux";
+import {deleteClasses, getClasses} from "../../../Action/Class";
+import './ClassDetails.css'
+import {TextField} from "@material-ui/core";
+import * as row from "react-file-base64";
+import {fetchTeachers} from "../../../Action/Users";
+
 
 const StyledTableCell = withStyles((theme: Theme) =>
     createStyles({
@@ -35,40 +42,32 @@ const StyledTableRow = withStyles((theme: Theme) =>
     }),
 )(TableRow);
 
-const rows = [
-    { id: 1, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 2, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 3, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 4, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 5, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 6, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 7, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 8, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 9, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 10, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 11, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 12, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 13, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 14, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-    { id: 15, name: 'Grade 11', description: 'This is a grade 11 class', teacher: 'Mr.Dissanayka',image: 'Class_Image' },
-
-];
-
 const useStyles = makeStyles({
     table: {
-        minWidth: 1350,
+        minWidth: 40,
         borderRadius: 50
     },
-    editorContent: {
+    editorContentClass: {
         borderRadius: 30
     },
 });
 
 function ClassDetailsTable() {
+
     const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    // const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const dispatch = useDispatch();
+    const [searchTerm, setSearchTerm] = useState("");
+    const classDetails = useSelector((state) => state.classes.classRecords.records);
+    console.log('CLASS DETAIL', classDetails);
+
+    React.useEffect(() => {
+        // setIsLoading(dataLoading);
+        dispatch(getClasses());
+    }, []);
+
 
     const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
         setPage(newPage);
@@ -81,35 +80,91 @@ function ClassDetailsTable() {
         setPage(0);
     };
 
+    const confirmDelete = (id) => {
+        if (
+            window.confirm(
+                "Are you sure you want to delete the class? This action cannot be undone"
+            )
+        ) {
+            dispatch(deleteClasses(id));
+            alert("Delete the class");
+            setTimeout(function(){
+                dispatch(getClasses());
+            }, 100);
+
+        }
+
+        // setTimeout(() => dispatch(getClasses()), 1000);
+    }
     return (
         <React.Fragment>
             {/*<div className="class-table-component">*/}
             {/*    <div className="input-table-container">*/}
-                    <TableContainer component={Paper} className={classes.editorContent}>
+            <div className="classTableBackground">
+                <div className="class-table-title-header">
+                    <h1 className="title-classTable">Class Details Table</h1>
+                    <div className="search-bar-class-table">
+                        <TextField
+                            id="filled-full-width"
+                            label="Search"
+                            placeholder="Search by name.."
+                            fullWidth
+                            margin="normal"
+                            variant="outlined"
+                            className="search-teacher"
+                            value={searchTerm}
+                            onChange={(event) => setSearchTerm(event.target.value)}
+                            style={{backgroundColor: "#FFFFFF", width: 300, borderRadius: 30}}
+                        />
+                    </div>
+                    {/*<div className="search-bar-class-table">*/}
+                    {/*    <TextField*/}
+                    {/*        id="filled-full-width"*/}
+                    {/*        // label="Search"*/}
+                    {/*        placeholder="Search Items.."*/}
+                    {/*        fullWidth*/}
+                    {/*        margin="normal"*/}
+                    {/*        // variant="outlined"*/}
+                    {/*        className="search-class"*/}
+                    {/*        style={{backgroundColor: "#FFFFFF", width: 300, height: 30, borderRadius: 30}}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+
+                </div>
+                <TableContainer component={Paper} className={classes.editorContentClass}>
                         <Table className={classes.table} aria-label="customized table">
-                            <TableHead>
+                            <TableHead className="class-table-header">
                                 <TableRow>
-                                    <TableCell align="center" >Class name</TableCell>
-                                    <TableCell align="center" >Description</TableCell>
-                                    <TableCell align="center" >Teacher name</TableCell>
-                                    <TableCell align="center" >Image</TableCell>
-                                    <TableCell align="center" >Delete</TableCell>
-                                    <TableCell align="center" >Update</TableCell>
+                                    <TableCell align="center" className="classTablerow">Class name</TableCell>
+                                    <TableCell align="center" className="classTablerow">Description</TableCell>
+                                    <TableCell align="center" className="classTablerow">Teacher name</TableCell>
+                                    {/*<TableCell align="center" className="classTablerow">Image</TableCell>*/}
+                                    <TableCell align="center" className="classTablerow">Delete</TableCell>
+                                    <TableCell align="center" className="classTablerow">Update</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows.map((row) => (
+                                {classDetails?.filter((val) => {
+                                    if(searchTerm == ""){
+                                        return val
+                                    }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                                        return val
+                                    }
+                                })
+                                // slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .map((row) => (
                                     <StyledTableRow key={row.id}>
-                                        {/*<StyledTableCell component="th" scope="row">{row.id}</StyledTableCell>*/}
+                                        {/*<StyledTableCell align="center">{row.id}</StyledTableCell>*/}
                                         <StyledTableCell align="center">{row.name}</StyledTableCell>
                                         <StyledTableCell align="center">{row.description}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.teacher}</StyledTableCell>
-                                        <StyledTableCell align="center">{row.image}</StyledTableCell>
+                                        <StyledTableCell align="center">{row.tutorName}</StyledTableCell>
+                                        {/*<StyledTableCell align="center">{row.image}</StyledTableCell>*/}
                                         <TableCell align="center">
-                                            <DeleteIcon color="primary" style={{fontSize: 40 }}/>
+                                            <DeleteIcon  color="primary" style={{fontSize: 35 }}
+                                            onClick={() => {confirmDelete(row.id)}}/>
                                         </TableCell>
                                         <TableCell align="center">
-                                            <EditIcon style={{ color: green[500], fontSize: 40 }}/>
+                                            <EditIcon style={{ color: green[500], fontSize: 35 }}/>
                                         </TableCell>
                                     </StyledTableRow>
                                 ))}
@@ -119,7 +174,7 @@ function ClassDetailsTable() {
                                     <TablePagination
                                         rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
                                         colSpan={3}
-                                        count={rows.length}
+                                        count={10}
                                         rowsPerPage={rowsPerPage}
                                         page={page}
                                         SelectProps={{
@@ -133,7 +188,9 @@ function ClassDetailsTable() {
                                 </TableRow>
                             </TableFooter>
                         </Table>
-                    </TableContainer>
+                </TableContainer>
+            </div>
+
             {/*    </div>*/}
             {/*</div>*/}
         </React.Fragment>

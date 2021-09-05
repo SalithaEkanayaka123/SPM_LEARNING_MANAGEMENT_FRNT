@@ -1,0 +1,17 @@
+.DownloadFileInterface{
+  display: flex;
+}
+
+
+.home-DownloadFileinterface-container-filter{
+  margin-left: 3%;
+}
+
+.all-DownloadFileinterface-section-row{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-auto-rows: minmax(1px, auto);
+  justify-content: left;
+  align-items: normal;
+  grid-gap: 5%;
+}

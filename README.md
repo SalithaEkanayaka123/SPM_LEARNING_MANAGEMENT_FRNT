@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# SPM - Learning Management Frontend.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Landing Page Preview.
+![GitHub Logo](repo-header-image.png)
+This repository contains the front-end React project of the Learning management system.
 
-## Available Scripts
+#### System Overveiw
 
-In the project directory, you can run:
+Assignment based on an online tuition management system. Students can subscribe to the services and use the material that is provided by the online system. The system will manage several units including tutors, modules, materials of modules (Downloadable) schedules, and more. Students will drop the initial one-time payment to subscribe to a module. Once unlocked the module permission will remain forever with the authenticated user. They can go through materials, download the attached documents and stream attached videos.
 
-### `npm start`
+When an unregistered user comes into the system he/ she can only see the overview of the system and to see the fully functional system user has to register to the system. If the user is a student, the student has to register on the student registration page and if the user is a teacher, the teacher has to register on the teacher's registration page. To navigate to the system user has to login in relevant login  pages. When navigating in each login system admins make sure to avoid unauthorized users accessing the system by relevant user authentications and validations.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When Student logs into the system, the student can see the classes, courses and materials but he/ she has been restricted from accessing them by relevant validation until payments are done. In the student profile page students can see the details of the student that is given to the system following with payment history of each student of each payment he/ she has done. In teacher’ profile page the teacher can have the personal details for the teacher the same as the student.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users point of view there are two types of users as tutors and students, However admins and the systems technicals are exceptions as they don’t directly associate with the system.
 
-### `npm test`
+Tutors can publish modules or courses with their materials. Tutors will get paid once students enroll in the module. These courses can be updated by the tutors overtime. They can add new content to the modules or else they can even revoke already published modules in the system.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once a registered student enrolled in a course by paying. That course permission will be retained forever for that student. They can see the progress that they are making in these courses. Another advantage here is that they can send their problems and issues as inquiries to the tutors which are in charge of each course.
 
-### `npm run build`
+As for the course materials there are attachments such as PDF documents and worksheets, Also they can stream online attached lectures inside the course.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Payment handling system is already mentioned above. Basically it will calculate and pay the tudors based on how many students have bought their courses. Some proportion of this amount will be dedicated for the system expenses and the rest will be allocated as the tutor fee.

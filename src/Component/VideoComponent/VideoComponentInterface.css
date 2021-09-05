@@ -1,0 +1,28 @@
+.VideoComponentInterface {
+  display: flex;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.home-videocomponentinterface-container-filter {
+  margin-left: 3%;
+}
+
+.all-videocomponentinterface-section-row {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-auto-rows: minmax(1px, auto);
+  justify-content: left;
+  grid-gap: 5%;
+}
+
+.videocontent-background {
+  background-color: #AEAEAE;
+  height: 200%;
+}
+
+.title {
+  margin-left: 3%;
+}
+
+/*# sourceMappingURL=VideoComponentInterface.css.map */

@@ -10,9 +10,19 @@ import TutorDashboard from "./Pages/TutorDashboard/TutorDashboard";
 import NavBarButtonComponent from "./Component/NavigationBar/NavBarButtonComponent";
 import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
 import UserProfilePage from "./Pages/UserProfile/UserProfilePage";
+
+import ClassPage from "./Pages/ClassPage/ClassPage";
+
 import {ProtectedRoute} from "./Validation/ProtectedRoutes";
+
 import {Provider} from "react-redux";
 import store from "./store";
+import EmailUpdateComponent from "./Component/Profile/EmailUpdateComponent";
+import SingleClassView from "./Pages/SingleClass/SingleClassView";
+import ClassCourseview from "./Pages/ClassCourseview/ClassCourseview";
+import DownloadFile from "./Component/Downloads/DownloadFile";
+import PopUpTeacherStatusComponent from "./Component/PopupModel/TeacherStatus/PopUpTeacherStatusComponent";
+import VideoComponentInterface from "./Component/VideoComponent/VideoComponentInterface";
 
 
 const App = () => {
@@ -31,6 +41,13 @@ const App = () => {
                   {/*<Route exact path = "/tutordash" component={TutorDashboard}/>*/}
                   <Route exact path = "/admindash" component={AdminDashboard}/>
                   <Route exact path = "/navbarbuttoncomponent" component={NavBarButtonComponent}/>
+                  <Route exact path = "/emailupdate" component={EmailUpdateComponent}/>
+                  <Route exact path = "/class" component={ClassPage}/>
+                  <Route exact path = "/ClassCourseview" component={ClassCourseview}/>
+                  <Route exact path = "/singleclassview" component={SingleClassView}/>
+                  <Route exact path = "/download" component={DownloadFile}/>
+                  <Route exact path = "/teacherstatuspopup" component={PopUpTeacherStatusComponent}/>
+                  <Route exact path = "/videocomponent" component={VideoComponentInterface}/>
               </Switch>
           </BrowserRouter>
   )

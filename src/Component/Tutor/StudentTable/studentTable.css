@@ -9,10 +9,10 @@
 }
 
 .title-studentTable {
+  display: inline-block;
   text-align: Left;
   color: #C4C4C4;
   font-weight: 700;
-  font-family: Roboto;
   font-size: 44px;
 }
 
@@ -32,14 +32,9 @@
 }
 
 .search-bar-student-table {
-  margin-left: 387.5%;
-  margin-top: -17%;
-  border-radius: 30px;
-  background: white;
-}
-
-.student-table-title-header {
-  display: inline-block;
+  float: right;
+  align-content: center;
+  margin-top: -0.6%;
 }
 
 .search-student {

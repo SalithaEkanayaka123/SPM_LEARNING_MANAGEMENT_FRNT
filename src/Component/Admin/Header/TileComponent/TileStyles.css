@@ -16,5 +16,11 @@
   font-size: 40px;
   color: #4B413A;
 }
+.admin-header-card .admin-card-image {
+  height: 100px;
+  width: 100px;
+  margin-left: 270px;
+  margin-top: -2%;
+}
 
 /*# sourceMappingURL=TileStyles.css.map */

@@ -5,7 +5,6 @@ import RegistrationComponent from "./RegistrationComponent";
 function Registration() {
     return (
         <div className="Outer-Registration">
-            <p> Registration Component</p>
             <div>
                 <img src= {LoginLogo}  className="RegisterLogo-image1"/>
             </div>

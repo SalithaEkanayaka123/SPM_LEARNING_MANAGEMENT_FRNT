@@ -5,15 +5,41 @@ import classImage from './5 9.svg'
 import Paypal from './paypal.svg'
 import Amex from './amex.svg'
 import Visa from './visa.svg'
+import {addPayment} from "../../Action/Payment";
+import {useDispatch} from "react-redux";
 
-function PaymentForm() {
+
+function PaymentForm({row}) {
 
     const [show, setShow] = useState(false);
+
+    const [courseid, setCourseid] = useState(row.CID);
+    const [date, setDate] = useState(new Date());
+    const [amount, setAmount] = useState(row.Amount);
+    const [description, setDescription] = useState('course enrollment');
+    const [doneby, setDoneby] = useState('STU001');
+    const [type, setType] = useState('income');
+    const dispatch = useDispatch();
+
+
+    function SubmitPaymentRecord () {
+        const newPayment ={
+            amount,
+            courseid,
+            date,
+            description,
+            doneby,
+            type
+        }
+        console.log(newPayment);
+        dispatch(addPayment(newPayment));
+    }
+
 
     const handleModal = () =>{ setShow(!show)}
     return(
         <div>
-            <button onClick={() => handleModal()}>Trigger Modal</button>
+            <button className='payment-enroll-btn' onClick={() => handleModal()}>Buy</button>
             <ReactModal
                 isOpen={show}
                 contentLabel="Minimal Modal Example"
@@ -27,9 +53,9 @@ function PaymentForm() {
                         <div className='MainClassContainer'>
                             <img className='MainImage' src={classImage}/>
                             <div className='Textcontainer'>
-                                <div className='heading-text'>Grade 10</div>
-                                <div className='sub-text'>Class</div>
-                                <div className='sub-text'>Description</div>
+                                <div className='heading-text'>{row.CName}</div>
+                                <div className='sub-text'>{row.Teacher}</div>
+                                <div className='sub-text'>{row.Description}</div>
                             </div>
                         </div>
                         <div className='MainMethodContainer'>
@@ -37,16 +63,16 @@ function PaymentForm() {
                             <hr></hr>
                             <div className='value-container'>
                                 <div className='Sub-heading'>Amount :</div>
-                                <div className='Sub-heading'>99.99$</div>
+                                <div className='Sub-heading'>{row.Amount}</div>
                             </div>
                             <div className='value-container'>
                                 <div className='Sub-heading'>Discount :</div>
-                                <div className='Sub-heading'>9.99$</div>
+                                <div className='Sub-heading'>{row.Amount}</div>
                             </div>
                             <hr></hr>
                             <div className='value-container'>
                                 <div className='Sub-heading'>Total Amount :</div>
-                                <div className='Sub-heading'>90.00$</div>
+                                <div className='Sub-heading'>{row.Amount}</div>
                             </div>
 
                             <hr/><hr/>
@@ -72,21 +98,25 @@ function PaymentForm() {
 
                         </div>
 
-                        <div className='input-field-container'>
-                            <input className='input-field' type='text' placeholder='Card Number'/>
-                            <div className='PaymentSubContainer'>
-                                <input className='input-field' type='text' placeholder='CVC'/>
-                                <input className='input-field' type='month' placeholder='Exdate'/>
+                            <div className='input-field-container'>
+                                <input className='input-field' type='text' placeholder='Card Number' />
+                                <div className='PaymentSubContainer'>
+                                    <input className='input-field' type='text' placeholder='CVC' />
+                                    <input className='input-field' type='month' placeholder='Exdate'/>
+                                </div>
+                                <input className='input-field' type='text' placeholder='Name on Card' />
+                                <input className='input-field' type='email' placeholder='Email Address' />
                             </div>
-                            <input className='input-field' type='text' placeholder='Name on Card'/>
-                            <input className='input-field' type='text' placeholder='Email Address'/>
-                        </div>
-                        <div className='input-button-container'>
-                            <button className='input-button'>Pay Now</button>
-                            <button className='input-button' onClick={handleModal}>Cancel</button>
-                        </div>
+                            <div className='input-button-container'>
+                                <button className='input-button' type="submit" onClick={SubmitPaymentRecord}>Pay Now</button>
+                                <button className='input-button' onClick={handleModal}>Cancel</button>
+                            </div>
+
+
                     </div>
                 </div>
+
+
             </ReactModal>
         </div>
     )

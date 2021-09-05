@@ -39,21 +39,21 @@
 .tutor-header-component .tutor-header-component-container {
   display: grid;
   justify-content: center;
-  grid-template-columns: 410px 410px 410px 410px;
+  grid-template-columns: 300px 300px 300px 300px;
   grid-gap: 5px;
   grid-template-areas: "tile1 tile2 tile3 tile4" "tile5 tile6 tile7 tile8";
 }
-@media only screen and (max-width: 1688px) {
+@media only screen and (max-width: 1500px) {
   .tutor-header-component .tutor-header-component-container {
-    grid-template-columns: 410px 410px;
-    grid-template-rows: 250px 250px 250px 250px;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 200px 200px 200px 200px;
     grid-template-areas: "tile1 tile2" "tile3 tile4" "tile5 tile6" "tile7 tile8";
   }
 }
-@media only screen and (max-width: 1688px) and (max-width: 966px) {
+@media only screen and (max-width: 1500px) and (max-width: 966px) {
   .tutor-header-component .tutor-header-component-container {
-    grid-template-columns: 410px;
-    grid-template-rows: 250px 250px 250px 250px 250px 250px 250px 250px;
+    grid-template-columns: 300px;
+    grid-template-rows: 200px 200px 200px 200px 200px 200px 200px 200px;
     grid-template-areas: "tile1" "tile2" "tile3" "tile4" "tile5" "tile6" "tile7" "tile8";
   }
 }

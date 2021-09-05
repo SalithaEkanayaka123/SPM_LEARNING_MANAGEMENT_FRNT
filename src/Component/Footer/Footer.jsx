@@ -10,20 +10,20 @@ function Footer() {
     return (
         <div className='footer-container'>
             <div className='row'>
-                <div className='col-md-3'>
+                <div className='col-lg-3 col-md-3'>
                     <div className='footer-main-header'>About Us</div>
                     <div className='text-area-continer'>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec dignissim sem. Donec sed justo rutrum, vehicula elit a, pulvinar sem. Proin convallis, orci vel blandit luctus, massa lectus blandit neque, sit amet pharetra libero lacus et arcu. Donec placerat lacinia nunc vel faucibus.
                     </div>
                 </div>
-                <div className='col-md-3'>
+                <div className='col-lg-3 col-md-3'>
                     <div className='footer-main-header'>Join with us</div>
                     <div className='footer-btn-wrapper'>
                         <button className='register-now-btn'>Sign Up Here</button>
                     </div>
 
                 </div>
-                <div className='col-md-3'>
+                <div className='col-lg-3 col-md-3'>
                     <div className='footer-main-header'>Links</div>
                     <div className='link-warpper'>
                         <ul>

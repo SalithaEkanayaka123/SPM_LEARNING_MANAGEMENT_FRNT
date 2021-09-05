@@ -1,8 +1,46 @@
+
+.class-tile-container{
+  width:300px;
+  height: 200px;
+  display: flex;
+  background-color: #7D75A4;
+  border-radius: 30px;
+  margin: 1.5%;
+
+
+  .left-container{
+    color: #FFFFFF;
+    width: 150px;
+    padding: 10px;
+    .main-heading{
+      font-size: larger;
+      font-weight: bold;
+
+    }
+    .sub-heading{
+      font-size: small;
+
+
+    }
+  }
+
+  }
+  .right-container{
+    overflow: hidden;
+    border-radius: 0 30px 30px 0;
+    img{
+      width: fit-content;
+      height: 200px;
+    }
+
+  }
+//////
 .card-img-top{
   border-radius: 0% 10% 10% 0%;
   height: 150.2px;
   width: 50%;
   object-fit: cover;
+
 }
 
 .card-deck{
@@ -22,6 +60,7 @@
 }
 
 .class{
-  max-height: 50.2px;
+  max-height: 150.2px;
   width: 302px;
 }
+

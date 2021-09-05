@@ -1,0 +1,31 @@
+.course-tile-container{
+  width: 200px;
+  height: 200px;
+  background-color: #7D75A4;
+  border-radius: 30px;
+  margin: 1.5%;
+  position: relative;
+
+  .top-container{
+    color: #FFFFFF;
+    padding: 10px;
+   text-align: right;
+    .main-heading{
+      font-size: larger;
+      font-weight: bold;
+    }
+    .sub-heading{
+      font-size: small;
+    }
+  }
+  .image-container{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 28px;
+    img{
+      width: 100px;
+
+    }
+
+  }
+}

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,14 +11,21 @@ import {Link} from "react-router-dom";
 import {makeStyles, TextField} from "@material-ui/core";
 import './studentTable.css'
 import studentDeleting1 from "./images/studentDelete-image1.png";
-import {fetchStudents} from "../../../Action/Users";
+import {deleteUsers, fetchStudents} from "../../../Action/Users";
 import teacherDeleteimage1 from "../../Admin/TeachersTable/images/teacherDelete-image1.png";
 import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from "react-router";
+import TablePagination from "@material-ui/core/TablePagination";
+import TableFooter from "@material-ui/core/TableFooter";
 
 
 
 const StudentTableComponent = ()  => {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const [searchTerm, setSearchTerm] = useState("");
+    const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    //const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
     const response = useSelector((state) => state.userDetails1.UserDetails.records.data);
     console.log(response);
@@ -28,8 +35,20 @@ const StudentTableComponent = ()  => {
         dispatch(fetchStudents());
     },[])
 
+    const deleteStudent = (id) => {
+        dispatch(deleteUsers(id))
+        setTimeout(function(){
+            dispatch(fetchStudents());
+            }, 3000);
+    }
 
+    const handleChangePage = () => {
 
+    }
+
+    const handleChangeRowsPerPage= () => {
+
+    }
     const useStyles = makeStyles({
         table: {
             maxWidth: "710%",
@@ -47,6 +66,7 @@ const StudentTableComponent = ()  => {
     });
     const classes = useStyles();
 
+
     return (
         <div className="Student-table-background">
             <div className="student-table-title-header">
@@ -60,7 +80,9 @@ const StudentTableComponent = ()  => {
                         margin="normal"
                         variant="outlined"
                         className="search-student"
-                        style={{backgroundColor: "#FFFFFF", width: 300, borderRadius: 2}}
+                        value={searchTerm}
+                        onChange={(event) => setSearchTerm(event.target.value)}
+                        style={{backgroundColor: "#FFFFFF", width: 300, borderRadius:30}}
                     />
                 </div>
             </div>
@@ -82,9 +104,15 @@ const StudentTableComponent = ()  => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {
-                            response?.map((row) => (
-                                <TableRow key={row.id}>
+                        {response?.filter((val) => {
+                            if(searchTerm == ""){
+                                return val
+                            }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                                return val
+                            }
+                        }).map((row) => (
+                            console.log(row),
+                                <TableRow>
                                     <TableCell align="center"> {row.id} </TableCell>
                                     <TableCell align="center"> {row.name} </TableCell>
                                     <TableCell align="center"> {row.email} </TableCell>
@@ -92,12 +120,31 @@ const StudentTableComponent = ()  => {
                                     <TableCell align="center"> {row.password} </TableCell>
                                     <TableCell align="center"> {row.type} </TableCell>
                                     <TableCell align="center">
-                                        <Link> <p><img src= {studentDeleting1}  className="studentDelete-image1"/></p> </Link>
+                                        <a onClick={() => {
+                                            deleteStudent(row.id)}} > <img src= {studentDeleting1}  className="studentDelete-image1"/> </a>
                                     </TableCell>
                                 </TableRow>
-                            ))
+                        ))
                         }
                     </TableBody>
+                    <TableFooter>
+                        <TableRow>
+                            <TablePagination
+                                rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                                colSpan={3}
+                                count={10}
+                                rowsPerPage={rowsPerPage}
+                                page={6}
+                                SelectProps={{
+                                    inputProps: { 'aria-label': 'rows per page' },
+                                    native: true,
+                                }}
+                                onPageChange={handleChangePage}
+                                onRowsPerPageChange={handleChangeRowsPerPage}
+                                // ActionsComponent={TablePaginationActions}
+                            />
+                        </TableRow>
+                    </TableFooter>
                 </Table>
             </TableContainer>
         </div>

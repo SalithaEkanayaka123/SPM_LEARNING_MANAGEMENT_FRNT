@@ -30,8 +30,8 @@
 .login-image1{
     position: absolute;
     width: 15%;
-    margin-top: -1%;
-    margin-left: -1%;
+    margin-top: -0.5%;
+    margin-left: -0.6%;
 }
 
 .login-info2{
@@ -42,13 +42,12 @@
 
 }
 .login-info2-main{
-    font-family:Roboto;
+
     color: white;
     font-weight: 700;
     size: 40px;
 }
 .login-info2-second{
-    font-family:Roboto;
     color: black;
     font-weight: 400;
     size: 19px;
@@ -62,29 +61,35 @@
 
 }
 .login-info3-main{
-    font-family:Roboto;
     color: black;
     font-weight: 700;
     size: 40px;
 }
 .login-info3-second{
-    font-family:Roboto;
     color: #8D8D8D;
     font-weight: 400;
     font-size: 16px;
 }
 
+.login-component-11{
+    //position: absolute;
+    margin-left: -251%;
+    margin-top: -19%;
+}
 .login-info4{
     margin-left: 1%;
 }
+
+.loginbackground{
+    position: relative;
+}
 .login-info4-main{
-    font-family:Roboto;
+
     color: black;
     font-weight: 700;
     size: 40px;
 }
 .login-info4-second{
-    font-family:Roboto;
     color: #8D8D8D;
     font-weight: 400;
     font-size: 16px;
@@ -94,13 +99,11 @@
     width: 30%;
 }
 .login-info5-main{
-    font-family:Roboto;
     color: #8D8D8D;
     font-weight: 400;
     font-size: 15px;
 }
 .login-info5-second{
-    font-family:Roboto;
     color: #35C1ED;
     font-weight: 700;
     font-size: 15px;
@@ -111,7 +114,6 @@
     width: 50%;
 }
 .login-info6-main{
-    font-family:Roboto;
     color: #8D8D8D;
     font-weight: 400;
     font-size: 15px;
@@ -139,7 +141,6 @@
     color: black;
 }
 .login-body .input-wrapper {
-    font-family:Roboto;
     //color: black;
     font-weight: 700;
     font-size: 19px;

@@ -1,0 +1,24 @@
+.announcement-section-responsive-subcomponent1 {
+  grid-area: subcomponent1;
+}
+.announcement-section-responsive-subcomponent2 {
+  grid-area: subcomponent2;
+}
+
+.announcement-section-responsive-layout {
+  display: grid;
+  margin-bottom: 10px;
+  width: fit-content;
+  grid-template-columns: 500px 500px 500px;
+  grid-gap: 30px;
+  grid-template-areas: "subcomponent1 subcomponent2 subcomponent3";
+}
+@media only screen and (max-width:1720px) {
+  .announcement-section-responsive-layout {
+    grid-template-columns: 100%;
+    grid-template-rows: 500px 500px 500px;
+    grid-template-areas:
+        "subcomponent1"
+        "subcomponent2"
+  }
+}

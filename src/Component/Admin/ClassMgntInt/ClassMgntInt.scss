@@ -2,8 +2,9 @@
   background-color: #C8C8C8;
   margin-top: 12px;
   border-radius: 30px;
-  //display: flex;
+  display: inline-block;
   max-width: 30%;
+  margin-left: 1%;
   .input-form-container {
     width: 90%;
     padding: 10px;
@@ -97,4 +98,8 @@
   }
 }
 
+.msg{
+  margin-left: 30px;
+  margin-top: 1%;
+}
 

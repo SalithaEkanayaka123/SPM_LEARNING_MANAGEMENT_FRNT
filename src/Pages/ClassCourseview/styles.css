@@ -1,0 +1,85 @@
+.class-course-view-container {
+  width: 100%;
+  background: #696969;
+  color: #FFFFFF;
+  margin: 0;
+}
+.class-course-view-container .class-course-header {
+  font-size: 56px;
+  font-weight: bolder;
+}
+.class-course-view-container .search-course-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+.class-course-view-container .class-course-view-wrapper {
+  padding: 1%;
+}
+.class-course-view-container .class-course-view-wrapper .search-form .input-field {
+  width: 50%;
+  height: 50px;
+  border-radius: 13.48px;
+  margin-right: 20px;
+  border: none;
+  padding-inline-start: 30px;
+  background-color: #C4C4C4;
+}
+.class-course-view-container .class-course-view-wrapper .search-form .Subscribe-btn {
+  width: 150px;
+  color: #FFFFFF;
+  border: none;
+  height: 50px;
+  font-size: 18px;
+  font-weight: bolder;
+  border-radius: 12px;
+  background-color: #8886FF;
+}
+.class-course-view-container .course-table-container {
+  margin-top: 2%;
+  margin: 1%;
+  border-collapse: separate;
+  border-spacing: 0 0.7rem;
+  color: #000;
+}
+.class-course-view-container .course-table-container .course-table-header {
+  text-align: center;
+}
+.class-course-view-container .course-table-container .course-table-header .table-head-row-col {
+  width: 10%;
+  background-color: #9F9DFF;
+  padding: 0.5%;
+  border-left: 1px solid #000;
+}
+.class-course-view-container .course-table-container .course-table-data {
+  text-align: center;
+  background-color: #C4C4C4;
+}
+.class-course-view-container .course-table-container .course-table-data .table-data-row-col {
+  height: fit-content;
+  background-color: #C4C4C4;
+  padding: 0.5%;
+  border-left: 1px solid #000;
+}
+.class-course-view-container .text-align {
+  text-align: left;
+}
+.class-course-view-container table th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: none;
+}
+.class-course-view-container table th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.class-course-view-container table td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.class-course-view-container table td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

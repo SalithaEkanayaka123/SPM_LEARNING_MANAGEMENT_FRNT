@@ -1,0 +1,76 @@
+.class-announcement-container {
+  background-color: #525252;
+  width: 600px;
+  height: 500px;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+.class-announcement-container .class-announcement-body {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  color: white;
+  height: 400px;
+  margin-left: 10px;
+}
+.class-announcement-container .class-announcement-body .input-form-container {
+  width: 100%;
+  padding: 10px;
+}
+.class-announcement-container .class-announcement-body .input-form-container .form {
+  width: 250%;
+}
+.class-announcement-container .class-announcement-body .input-form-container .form label {
+  font-weight: bold;
+  color: white;
+}
+.class-announcement-container .class-announcement-body .input-form-container .form .form-input {
+  width: 510px;
+  padding: 12px 20px;
+  margin-right: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.class-announcement-container .class-announcement-body .input-form-container .form .form-area {
+  width: 510px;
+  height: 250px;
+  padding: 12px 20px;
+  margin-right: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.class-announcement-container .class-announcement-body .class-announcement-body-button-group {
+  margin-top: 10px;
+  display: flex;
+  margin-left: 20px;
+}
+.class-announcement-container .class-announcement-body .class-announcement-body-button-group .class-announcement-button {
+  margin-right: 10px;
+}
+.class-announcement-container .class-announcement-section-header {
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+  font-family: "Helvetica", "Verdana", serif;
+}
+.class-announcement-container .class-announcement-section-header.dark-header {
+  color: #525252;
+}
+.class-announcement-container .class-announcement-second-header {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: -15px;
+  color: #CCAB00;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  font-family: "Helvetica", "Verdana", serif;
+}
+
+/*# sourceMappingURL=ClassAnnouncement.css.map */

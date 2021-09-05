@@ -29,19 +29,23 @@
   margin-left: 10%;
 }
 
+.registration {
+  float: left;
+  margin-left: -337%;
+  margin-top: -24%;
+}
+
 .registration-info4 {
   margin-left: 5%;
 }
 
 .registration-info4-main {
-  font-family: Roboto;
   color: black;
   font-weight: 700;
   size: 40px;
 }
 
 .registration-info4-second {
-  font-family: Roboto;
   color: #8D8D8D;
   font-weight: 400;
   font-size: 16px;
@@ -63,7 +67,6 @@
 }
 
 .registration-body .input-wrapper {
-  font-family: Roboto;
   font-weight: 700;
   font-size: 19px;
 }
@@ -92,14 +95,12 @@
 }
 
 .registration-info5-main {
-  font-family: Roboto;
   color: #8D8D8D;
   font-weight: 400;
   font-size: 15px;
 }
 
 .registration-info5-second {
-  font-family: Roboto;
   color: #35C1ED;
   font-weight: 700;
   font-size: 15px;
@@ -111,7 +112,6 @@
 }
 
 .registration-info6-main {
-  font-family: Roboto;
   color: #8D8D8D;
   font-weight: 400;
   font-size: 15px;

@@ -1,0 +1,88 @@
+.AllTransations-continer .Trasaction-view-container {
+  border-radius: 15.48px;
+  background-color: #525252;
+  padding: 10px;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-view-wrapper {
+  width: 100%;
+  color: #FFFFFF;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  padding: 1%;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-view-wrapper .Trasaction-header {
+  font-size: 45px;
+  font-weight: bolder;
+  color: #C4C4C4;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-view-wrapper .Trasaction-header .Trasaction-sub-header {
+  font-size: 20px;
+  font-weight: normal;
+  color: #BDA00A;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-view-wrapper .search-form .input-field {
+  width: 300px;
+  height: 50px;
+  border-radius: 13.48px;
+  margin-right: 20px;
+  border: none;
+  padding-inline-start: 20px;
+  background-color: #C4C4C4;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container {
+  margin-top: 2%;
+  margin: 1%;
+  color: #000;
+  font-size: larger;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-header {
+  text-align: center;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-header .table-head-row-col {
+  width: 10%;
+  background-color: #C4C4C4;
+  padding: 0.5%;
+  border-bottom: 1px solid #000;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-data {
+  text-align: center;
+  background-color: #C4C4C4;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-data .table-data-row-col {
+  height: fit-content;
+  background-color: #C5C4CC;
+  padding: 0.5%;
+  border-bottom: 1px solid #000;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-data-income {
+  text-align: center;
+  background-color: #AEA7DC;
+}
+.AllTransations-continer .Trasaction-view-container .Trasaction-table-container .Trasaction-table-data-income .table-data-row-col {
+  height: fit-content;
+  background-color: #AEA7DC;
+  padding: 0.5%;
+  border-bottom: 1px solid #000;
+}
+.AllTransations-continer .Trasaction-view-container table th:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-left: none;
+}
+.AllTransations-continer .Trasaction-view-container table th:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.AllTransations-continer .Trasaction-view-container table td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.AllTransations-continer .Trasaction-view-container table td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */

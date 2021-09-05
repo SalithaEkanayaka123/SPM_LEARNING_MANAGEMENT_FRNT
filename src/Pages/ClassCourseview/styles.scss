@@ -1,0 +1,98 @@
+.class-course-view-container{
+  width: 100%;
+  background: #696969;
+  color: #FFFFFF;
+  margin: 0;
+
+  .class-course-header{
+    font-size: 56px;
+    font-weight: bolder;
+  }
+  .search-course-header{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1%;
+  }
+
+  .class-course-view-wrapper{
+    padding: 1%;
+    .search-form{
+      .input-field{
+        width: 50%;
+        height: 50px;
+        border-radius: 13.48px;
+        margin-right:20px;
+        border: none;
+        padding-inline-start: 30px;
+        background-color: #C4C4C4;
+      }
+      .Subscribe-btn{
+        width: 150px;
+        color: #FFFFFF;
+        border: none;
+        height: 50px;
+        font-size: 18px;
+        font-weight: bolder;
+        border-radius: 12px;
+        background-color: #8886FF;
+      }
+    }
+  }
+
+  .course-table-container{
+    margin-top: 2%;
+    margin: 1%;
+    border-collapse: separate;
+    border-spacing: 0 0.7rem;
+    color: #000;
+
+    .course-table-header{
+      text-align: center;
+
+
+      .table-head-row-col{
+        width: 10%;
+        background-color: #9F9DFF;
+        padding: 0.5%;
+        border-left: 1px solid #000;
+
+      }
+    }
+    .course-table-data{
+      text-align: center;
+      background-color: #C4C4C4;
+
+      .table-data-row-col{
+        height: fit-content;
+        background-color: #C4C4C4;
+        padding: 0.5%;
+        border-left: 1px solid #000;
+      }
+    }
+  }
+
+  .text-align{
+    text-align: left;
+  }
+
+  table th:first-child{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-left: none;
+  }
+
+  table th:last-child{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  table td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  table td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+}

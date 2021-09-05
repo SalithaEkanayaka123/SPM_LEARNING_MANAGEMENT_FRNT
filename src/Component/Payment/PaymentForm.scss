@@ -1,3 +1,13 @@
+.payment-enroll-btn{
+  border: none;
+  background: #FF5050;
+  padding: 3px;
+  border-radius: 10px;
+  width: 70px;
+  height: 30px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
 .Modal {
   position: absolute;
   top: 50%;
@@ -48,8 +58,9 @@
       }
       .Textcontainer{
         position: absolute;
+        width: fit-content;
         top: 7%;
-        left: 5%;
+        left: 6%;
         transform: translate(-25%, -25%);
         color: #FFFFFF;
         .heading-text{

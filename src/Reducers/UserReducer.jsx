@@ -3,7 +3,9 @@ import {ADD_USER, DELETE_USER, UPDATE_USER, GET_USER, FETCH_USERS, VALID_USER} f
 const initialState = {
     UserDetails: {
         records: [],
-        record: {}
+        record: {},
+        success: null,
+        error: null
     },
     editDetail: [],
     loginUser: []
@@ -26,7 +28,9 @@ export default function (state = initialState, action){
                 ...state,
                 UserDetails: {
                     ...state.UserDetails,
-                    record: action.payload
+                    record: action.payload,
+                    success: "Class inserted successfully",
+                    error: null
                 }
             }
         case DELETE_USER:
@@ -35,7 +39,7 @@ export default function (state = initialState, action){
                 ...state,
                 UserDetails: {
                     ...state.UserDetails,
-                    record: state.UserDetails.records.filter(item => item !== action.payload)
+                    record: state.UserDetails.records.data.filter(item => item !== action.payload)
                 }
             }
         case GET_USER:

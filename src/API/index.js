@@ -15,6 +15,10 @@ export const createCourse = (course) => axios.post(url + "course", course);
 //add class
 export const createClass = (clz) => axios.post(url + "class", clz);
 
+//add payment
+export const createPayment = (pay) => axios.post(url + "addPayment", pay);
+
+
 
 
 

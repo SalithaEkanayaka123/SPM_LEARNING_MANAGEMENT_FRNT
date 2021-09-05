@@ -18,7 +18,13 @@
   background-color: #4A6CF4;
 
 }//
-
+.popupInterfaceUpdateEmail{
+    //filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    position: absolute;
+    background-color: cornflowerblue;
+    margin-left: 10%;
+    margin-top: 20%;
+}
 .bluescreen{
   height: 328px;
   background-color: rgba(24, 38, 108, 1);
@@ -45,7 +51,6 @@
 }
 
 .userprofile1-info-main{
-  font-family:Roboto;
   color: rgba(0, 0, 0, 1);
   font-weight: 400;
   font-size: 48px;
@@ -69,6 +74,7 @@
   border-radius: 30px 30px 30px 30px;
   background-color:  rgba(255, 92, 92, 1);
   margin-bottom: 10px;
+
 }
 
 .profitable-group{
@@ -85,11 +91,11 @@
   margin-left: 587px;
   margin-top: -820px;
   border-radius: 30px;
-  background-color: #FFFFFF;
-  filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: #E5E5E5;
+  //filter: blur(20px) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  //filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .userprofile-bio1{
-  display: flex;
   flex-direction: column;
   margin: auto;
   height: 305px;
@@ -103,14 +109,12 @@
 }
 
 .userprofile-bio1-info1-main{
-  font-family:Roboto;
   color:rgba(0, 0, 0, 1);
   font-weight: 400;
   font-size: 48px;
 }
 
 .userprofile-bio1-info1-second{
-  font-family:Roboto;
   color: rgba(0, 0, 0, 1);
   font-weight: 400;
   font-size: 28px;

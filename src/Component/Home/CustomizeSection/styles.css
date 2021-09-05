@@ -1,0 +1,36 @@
+.section-main-wrapper {
+  width: 100%;
+  height: fit-content;
+  border-radius: 0 0 50px 0;
+}
+.section-main-wrapper .section-header {
+  display: flex;
+  justify-content: space-between;
+}
+.section-main-wrapper .section-header .topic-section .main-topic {
+  color: #685DA5;
+  font-size: xx-large;
+}
+.section-main-wrapper .section-header .topic-section .sub-topic {
+  width: 70%;
+  color: #FFFFFF;
+  font-size: large;
+}
+.section-main-wrapper .section-header .view-all-btn {
+  margin-top: 2%;
+  margin-right: 3%;
+  font-size: small;
+  width: 5%;
+  height: fit-content;
+  border-radius: 10px;
+  border: none;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.section-main-wrapper .section-body {
+  overflow: hidden;
+  display: flex;
+  height: 300px;
+}
+
+/*# sourceMappingURL=styles.css.map */

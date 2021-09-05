@@ -1,0 +1,53 @@
+.inquiry-popup-menu-container {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed;
+  top: 25%;
+  z-index: 2;
+  left: 25%;
+  bottom: 25%;
+  width: 50%;
+  height: 600px;
+  justify-content: center;
+  align-content: center;
+}
+.inquiry-popup-menu-container .inquiry-popup-container-header {
+  font-weight: bold;
+  font-size: 25px;
+}
+.inquiry-popup-menu-container .inquiry-popup-menu-body {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-style: italic;
+}
+.inquiry-popup-menu-container .inquiry-popup-menu-form .label-dark {
+  font-weight: bold;
+  color: #000000;
+  padding-left: 20px;
+}
+.inquiry-popup-menu-container .inquiry-popup-menu-form .form-input {
+  width: 95%;
+  padding: 12px 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.inquiry-popup-menu-container .inquiry-popup-menu-form .close-btn {
+  border-radius: 5px;
+  width: 100px;
+  color: white;
+  border: none;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  background-color: #7373f8;
+}
+
+/*# sourceMappingURL=InqPopUpMenu.css.map */

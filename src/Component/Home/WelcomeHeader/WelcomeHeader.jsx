@@ -16,7 +16,6 @@ function WelcomeHeader() {
                     </div>
                 </div>
             </div>
-            <hr/>
         </div>
 
     )

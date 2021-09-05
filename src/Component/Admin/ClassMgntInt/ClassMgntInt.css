@@ -2,7 +2,9 @@
   background-color: #C8C8C8;
   margin-top: 12px;
   border-radius: 30px;
+  display: inline-block;
   max-width: 30%;
+  margin-left: 1%;
 }
 .class-component .input-form-container {
   width: 90%;
@@ -84,6 +86,11 @@
 }
 .course-button-group.button-row {
   justify-content: right;
+}
+
+.msg {
+  margin-left: 30px;
+  margin-top: 1%;
 }
 
 /*# sourceMappingURL=ClassMgntInt.css.map */

@@ -49,7 +49,7 @@ function Navbar () {
         <React.Fragment>
             <nav className= "navbar">
                 <div className= "navbar-container">
-                    <Link to = "/login" className ="navbar-logo" onClick={closeMobileMenu}>
+                    <Link to = "/home" className ="navbar-logo" onClick={closeMobileMenu}>
                         <div >
                             <img src= {navImg}  style={navImgCss}/>
 
@@ -66,12 +66,12 @@ function Navbar () {
                             </Link>
                         </li>
                         <li className= "nav-item">
-                            <Link to= '/login' className ="nav-links" onClick={closeMobileMenu}>
+                            <Link to= '/class' className ="nav-links" onClick={closeMobileMenu}>
                                 CLASS
                             </Link>
                         </li>
                         <li className= "nav-item">
-                            <Link to= '/registration' className ="nav-links" onClick={closeMobileMenu}>
+                            <Link to= '' className ="nav-links" onClick={closeMobileMenu}>
                                 ABOUT US
                             </Link>
                         </li>
@@ -82,7 +82,7 @@ function Navbar () {
                         </li>
                     </ul>
                     <Link to = "/navbarbuttoncomponent" className ="navbar-logo" onClick={closeMobileMenu}>
-                        <div >
+                        <div>
                             <img src= {userIcon}  style={userIconImgCss}/>
 
                         </div>

@@ -1,0 +1,67 @@
+.announcement-table-container {
+  background-color: #525252;
+  width:1400px;
+  height: 500px;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+  margin-top: 20px;
+  margin-left: 80px;
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #5b5b5b #888888;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #8d8d8d;
+    border-radius:10px ;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #606060;
+    border-radius: 10px;
+  }
+
+  .announcement-table-header {
+
+  }
+  .announcement-table-body {
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: white;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 400px;
+    margin-left: 10px;
+    //background-color: #7F7CFF;
+  }
+
+  .announcement-table-section-header {
+    font-size: 25px;
+    font-weight: bolder;
+    color: white;
+    padding: 10px;
+    margin-left: 10px;
+    font-family: "Helvetica","Verdana", serif;
+    &.dark-header {
+      color: #525252;
+    }
+  }
+
+  .announcement-table-second-header {
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: -15px;
+    color: #CCAB00;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-family: "Helvetica","Verdana", serif;
+  }
+}

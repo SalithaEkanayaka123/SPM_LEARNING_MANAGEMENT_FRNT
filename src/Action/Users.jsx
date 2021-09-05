@@ -3,7 +3,7 @@ import axios from "axios";
 import * as api from '../API'
 export const fetchStudents = () => dispatch => {
     console.log('fetching');
-    axios.get(api.baseURL + '/students')//api.baseURL + 'deleteuser'
+    axios.get(api.baseURL + '/students')
         .then(response => {
             dispatch({
                 type: FETCH_USERS,
@@ -18,7 +18,7 @@ export const fetchStudents = () => dispatch => {
 
 export const fetchTeachers = () => dispatch => {
     console.log('fetching');
-    axios.get(api.baseURL + '/teachers')//api.baseURL + 'deleteuser'
+    axios.get(api.baseURL + '/teachers')
         .then(response => {
             dispatch({
                 type: FETCH_USERS,
@@ -40,9 +40,7 @@ export const fetchUser = () => dispatch => {
                 type: FETCH_USERS,
                 payload: response
             })}
-
         ).catch((err) => {
-
         console.log(err);
     })
 }
@@ -77,7 +75,7 @@ export const deleteUsers = (id) => dispatch => {
                     type: DELETE_USER,
                     payload: id
                 })
-                alert("data deleted sucessfully");
+          // alert("data deleted sucessfully");
             }
 
         ).catch((err) => {
@@ -85,12 +83,15 @@ export const deleteUsers = (id) => dispatch => {
     })
 }
 
+
 export const getUserByID = (data) => dispatch => {
     dispatch({
         type: GET_USER,
         payload: data
     })
 }
+
+
 
 export const upDateUser = (PostData, id) => dispatch => {
     axios.put(api.baseURL + 'updateuser/' + id , PostData)

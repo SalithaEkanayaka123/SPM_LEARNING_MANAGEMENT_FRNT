@@ -1,0 +1,37 @@
+.section-main-wrapper{
+  width: 100%;
+  height: fit-content;
+  border-radius: 0 0 50px 0;
+  .section-header{
+    display: flex;
+    justify-content: space-between;
+    .topic-section{
+      .main-topic{
+        color: #685DA5;
+        font-size: xx-large;
+      }
+      .sub-topic{
+        width: 70%;
+        color: #FFFFFF;
+        font-size: large;
+      }
+    }
+    .view-all-btn{
+      margin-top: 2%;
+      margin-right: 3%;
+      font-size: small;
+      width: 5%;
+      height: fit-content;
+      border-radius: 10px;
+      border: none;
+      color: #FFFFFF;
+      font-weight: bold;
+    }
+  }
+  .section-body{
+    overflow: hidden;
+    display: flex;
+    height: 300px;
+  }
+
+}

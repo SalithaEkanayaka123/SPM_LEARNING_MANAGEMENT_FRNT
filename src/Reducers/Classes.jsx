@@ -1,21 +1,63 @@
+import {
+    ADD_CLASS,
+    DELETE_CLASS,
+    GET_CLASS,
+    UPDATE_CLASS,
+
+} from "../Action/types";
+
 const initState = {
     classDetails: {
         records: [],
-        record: {}
+        record: {},
+        success: null,
+        error:null
     },
+
+    classRecords:[],
 }
 
-export default (classes = [], action) => {
-    switch(action.type){
-        case 'ADD_CLASS':
-            return [...classes, action.payload];
-        case 'GET_CLASS':
-            return action.payload;
-        case "UPDATE_CLASS":
-            return action.payload;
-        case "DELETE_CLASS":
-            return action.payload;
+
+export default function (state = initState, action){
+    switch (action.type) {
+        case GET_CLASS:
+            console.log('reducer');
+            return {
+                ...state,
+                classRecords: {
+                    ...state.classRecords,
+                    records: action.payload
+                }
+            }
+        case ADD_CLASS:
+            console.log('reducer');
+            return {
+                ...state,
+                classDetails: {
+                    ...state.classDetails,
+                    record: action.payload,
+                    success: "Class inserted successfully",
+                    error: null
+                }
+            }
+        case DELETE_CLASS:
+            console.log('reducer');
+            return {
+                ...state,
+                classDetails: {
+                    ...state.classDetails,
+                    record: state.classDetails.records.filter(item => item !== action.payload)
+                }
+            }
+        case UPDATE_CLASS:
+            return {
+                ...state,
+                classDetails: {
+                    ...state.classDetails,
+                    record: action.payload
+                }
+            }
         default:
-            return classes;
+            return state;
     }
 }
