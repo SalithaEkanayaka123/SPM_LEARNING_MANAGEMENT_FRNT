@@ -31,14 +31,12 @@ const App = () => {
           <BrowserRouter>
               <Navbar/>
               <Switch>
-                  <ProtectedRoute exact path="/tutordash" >
-                      <TutorDashboard/>
-                  </ProtectedRoute>
                   <Route exact path = "/home" component={HomePage}/>
                   <Route exact path = "/profile" component={UserProfilePage}/>
                   <Route exact path = "/login" component={LoginPage}/>
                   <Route exact path = "/registration" component={RegistrationPage}/>
                   {/*<Route exact path = "/tutordash" component={TutorDashboard}/>*/}
+                  <ProtectedRoute exact path="/tutordash" component={TutorDashboard}></ProtectedRoute>
                   <Route exact path = "/admindash" component={AdminDashboard}/>
                   <Route exact path = "/navbarbuttoncomponent" component={NavBarButtonComponent}/>
                   <Route exact path = "/emailupdate" component={EmailUpdateComponent}/>

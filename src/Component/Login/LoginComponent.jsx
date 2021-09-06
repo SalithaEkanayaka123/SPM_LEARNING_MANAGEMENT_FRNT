@@ -32,6 +32,7 @@ function LoginComponent(props) {
                 console.log('res1 ', response.data);
                 console.log('res1 ', values[0]);
                 if (values[1] == null){
+                    AuthClass.loginFail()
                     console.log('111')
                     alert('Invalid login')
                     history.push("/login");
@@ -54,6 +55,7 @@ function LoginComponent(props) {
                         //history.push();
                     }else{
                         console.log('111s')
+                        AuthClass.loginFail()
                         setName("");
                         setPassword("");
                         alert('Teacher Status pending')

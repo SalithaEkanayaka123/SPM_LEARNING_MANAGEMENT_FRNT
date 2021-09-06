@@ -8,10 +8,17 @@ class Auth {
         //API validation
         console.log(username);
         console.log(usertype);
+        //if ()
         localStorage.setItem('flag', true);
         localStorage.setItem('username', username);
         localStorage.setItem('usertype', usertype);
+
         this.authenicated = true;
+    }
+
+    loginFail() {
+        localStorage.setItem('flag', false);
+        this.authenticated = false;
     }
 
     logout(cb) {
