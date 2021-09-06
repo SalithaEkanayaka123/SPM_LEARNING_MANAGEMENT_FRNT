@@ -1,15 +1,17 @@
 .tutor-header-card {
-  background-color: #7F7CFF;
+  background-color: #7370ec;
   border-radius: 22.34px;
   width: 300px;
   height: 200px;
   padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .tutor-header-card .tutor-card-header {
   margin-top: 2px;
   font-weight: bold;
   font-size: 25px;
   font-family: "Helvetica", "Verdana", serif;
+  color: #343477;
 }
 .tutor-header-card .tutor-card-price {
   font-weight: lighter;

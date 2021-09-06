@@ -8,6 +8,7 @@ export const GET_USER = 'GET_USER';
 //Course Related Constants.
 export const FETCH_COURSES = 'FETCH_COURSES';
 export const ADD_COURSES = 'ADD_COURSE';
+export const REMOVE_COURSES = 'DELETE_COURSE';
 
 
 //Class related constants

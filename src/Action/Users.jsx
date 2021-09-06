@@ -3,7 +3,7 @@ import axios from "axios";
 import * as api from '../API'
 export const fetchStudents = () => dispatch => {
     console.log('fetching');
-    axios.get(api.baseURL + '/students')
+    axios.get(api.baseURL + 'students')
         .then(response => {
             dispatch({
                 type: FETCH_USERS,

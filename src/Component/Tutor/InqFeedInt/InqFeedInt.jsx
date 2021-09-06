@@ -9,7 +9,7 @@ import Inquiry from "./Inquiry/Inquiry";
  * **/
 
 
-function InqFeedInt({array1, array2}) {
+function InqFeedInt({array1, array2, setTrigger, setTriggerData, triggerData}) {
 
     return (
         <div className="inqfeedint-responsive-layout">
@@ -20,7 +20,10 @@ function InqFeedInt({array1, array2}) {
                 <Announcement/>
             </div>
             <div className="responsive-subcomponent3">
-                <Inquiry array={array2}/>
+                <Inquiry array={array2}
+                         setTrigger={setTrigger}
+                         setTriggerData={setTriggerData}
+                         triggerData={triggerData}/>
             </div>
         </div>
     )

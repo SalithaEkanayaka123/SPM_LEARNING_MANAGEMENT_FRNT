@@ -47,6 +47,7 @@
   overflow: scroll;
   overflow-x: hidden;
   height: 430px;
+  margin-right: 10px;
 }
 .course-component .course-table .course-table-body-scrollable #style-1::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -73,7 +74,7 @@
   margin-left: 10px;
   justify-content: right;
 }
-.course-button-group .dark-button {
+.course-button-group d .dark-button {
   border-radius: 5px;
   width: 100px;
   color: white;

@@ -15,6 +15,7 @@
   padding-left: 20px;
   padding-bottom: 10px;
 
+
   #{&}-first-column-back {
     background-color: #727272;
     border-radius: 30px 0px 0px 30px;
@@ -25,7 +26,7 @@
     @include custom-component-commons;
     overflow: hidden;
     border-radius: 30px 30px 30px 30px;
-    width: 500px;
+    width: 400px;
     background-color: #7364b9;
     .custom-row-component-header {
       font-weight: bold;
@@ -51,6 +52,7 @@
     display:flex;
     border-radius: 30px 0px 0px 30px;
     width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .custom-row-component-second-description{
       //margin-left: 70px;
       font-family: "Helvetica","Verdana", serif;
@@ -65,6 +67,7 @@
     align-content: center;
     margin-right: 30px;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .custom-row-button-group {
       display: flex;
       flex-direction: column;

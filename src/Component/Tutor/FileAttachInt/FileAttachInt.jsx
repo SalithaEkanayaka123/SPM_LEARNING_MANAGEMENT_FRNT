@@ -29,7 +29,7 @@ function FileAttachInt({array4}) {
                                className="form-input"/>
 
                         <div className="course-button-group button-row">
-                            <button className="dark-button">Add</button>
+                            <button className="add-button">Add</button>
                             <button className="light-button">Reset</button>
                         </div>
                     </form>

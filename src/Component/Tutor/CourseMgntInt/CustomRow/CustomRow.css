@@ -15,7 +15,7 @@
   overflow: hidden;
   overflow: hidden;
   border-radius: 30px 30px 30px 30px;
-  width: 500px;
+  width: 400px;
   background-color: #7364b9;
   z-index: 1;
   -webkit-box-shadow: 30px 30px 80px 0px #b2afb0;
@@ -40,6 +40,7 @@
   display: flex;
   border-radius: 30px 0px 0px 30px;
   width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .custom-row-component .custom-row-component-second-column .custom-row-component-second-description {
   font-family: "Helvetica", "Verdana", serif;
@@ -56,6 +57,7 @@
   align-content: center;
   margin-right: 30px;
   text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .custom-row-component .custom-row-component-three-column .custom-row-button-group {
   display: flex;
