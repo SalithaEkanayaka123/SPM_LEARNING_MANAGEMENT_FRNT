@@ -19,7 +19,7 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {useHistory} from "react-router";
 import axios from "axios";
 import {Container, Grid} from "@material-ui/core";
-import {fetchStudents, getUserCount} from "../../Action/Users";
+import {fetchStudents, fetchTeachers, getUserCount} from "../../Action/Users";
 import {Link} from "react-router-dom";
 import Button from "@progress/kendo-react-buttons/dist/es/Button";
 import AllTransations from "../../Component/Admin/AllTransations/AllTransations";
@@ -84,6 +84,8 @@ function TutorDashboard() {
     useEffect(()=> {
         getCourses();
     }, [])
+
+
 
     //Get Course Data
     const getCourses = () => {

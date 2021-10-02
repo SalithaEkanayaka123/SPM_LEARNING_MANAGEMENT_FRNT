@@ -14,7 +14,7 @@ function LoggedUserComponent() {
     const user1 = useSelector((state) => state?.userDetails1?.loginUser);
 
     const user = localStorage.getItem("username")
-    const email = localStorage.getItem("email")
+    const email = localStorage.getItem("usertype")
     // const [username, setUsername] = useState(user);
     // const [emails, setEmail] = useState(email);
     // console.log('retrievedObject: ', user);

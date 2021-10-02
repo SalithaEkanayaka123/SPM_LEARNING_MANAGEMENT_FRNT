@@ -13,6 +13,7 @@ function Navbar () {
     const closeMobileMenu = () => setClick(false);
 
     const dispatch = useDispatch();
+    let usertype = localStorage.getItem("usertype")
 
     const userIconImgCss = {
         height: "4vw",
@@ -76,13 +77,14 @@ function Navbar () {
                             </Link>
                         </li>
                         <li className= "nav-item">
-                            <Link to= '' className ="nav-links" onClick={closeMobileMenu}>
-                                ABOUT US
+                            <Link to= '/profile' className ="nav-links" onClick={closeMobileMenu}>
+                                Profile
                             </Link>
                         </li>
+
                         <li className= "nav-item">
                             <Link to= '/tutordash' className ="nav-links" onClick={closeMobileMenu}>
-                                Tutor Dashboard
+                                Tutor
                             </Link>
                         </li>
                     </ul>
