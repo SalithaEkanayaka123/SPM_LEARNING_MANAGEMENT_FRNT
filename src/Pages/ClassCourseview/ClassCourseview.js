@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PaymentForm from "../../Component/Payment/PaymentForm";
 import  './styles.css'
 
@@ -9,6 +9,8 @@ function ClassCourseview() {
         {"CID": 'C00M1',"CName": 'Maths',"Teacher": 'Akash Anwarathe',"Description": 'Combine maths grade 12/13',"Syllabus": '2016',"Duration": '48hr',"Amount": '99.99$'},
         {"CID": 'C00S1',"CName": 'Sinhala',"Teacher": 'Taneesha Chandrasena',"Description": 'Sinhala language grade 1',"Syllabus": '2020',"Duration": '48hr',"Amount": '99.99$'}
     ];
+
+    const [status,setStatus] = useState(false)
 
 // des character 25
     return (
@@ -39,7 +41,10 @@ function ClassCourseview() {
                         <td className='table-data-row-col'>{row.Syllabus}</td>
                         <td className='table-data-row-col'>{row.Duration}</td>
                         <td className='table-data-row-col'>{row.Amount}</td>
-                        <td className='table-data-row-col'><PaymentForm row={row}/></td>
+                        <td className='table-data-row-col'>
+                            {status === index ? "Enrolled" : <PaymentForm row={row} setStatus={setStatus} keyvalue={index}/>}
+
+                        </td>
                     </tr>
 
                 ))}

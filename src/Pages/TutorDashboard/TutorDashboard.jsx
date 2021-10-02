@@ -132,6 +132,12 @@ function TutorDashboard() {
         {"header":"Disabled Courses", "count":"6", "image": faTimes},
     ];
 
+    const Arrayx  = [
+        {"tid":"T003", "date":"2021/10/1","amount":"1500000.00", "description":"Teacher salary Aug", "doneby":"AD001", "type":"income","courseid":"C001" },
+        {"tid":"T007", "date":"2021/10/1","amount":"1500000.00", "description":"Teacher salary Sep", "doneby":"AD001", "type":"income","courseid":"C002" },
+        {"tid":"T007", "date":"2021/10/1","amount":"1500000.00", "description":"Teacher salary oct", "doneby":"AD001", "type":"income","courseid":"C002" }
+    ]
+
     console.log(courses);
     return (
             <div className="tutor-dashboard-page">
@@ -175,7 +181,7 @@ function TutorDashboard() {
                                   setTrigger={setTrigger}
                                   triggerHeader={triggerData}
                     />
-                    <AllTransations/>
+                    <AllTransations response={Arrayx}/>
                 </Container>
             </div>
         )
