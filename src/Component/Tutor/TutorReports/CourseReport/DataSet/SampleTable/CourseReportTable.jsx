@@ -8,11 +8,10 @@ import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
 import {useDispatch} from "react-redux";
 import TablePagination from "@material-ui/core/TablePagination";
-import './SampleTable.css'
-function SampleTable() {
+import './CourseReportTable.css'
+import CustomRow from "../../../../CourseMgntInt/CustomRow/CustomRow";
+function CourseReportTable({array}) {
 
-
-    const dispatch = useDispatch();
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [page, setPage] = React.useState(0);
 
@@ -20,16 +19,25 @@ function SampleTable() {
         table: {
             maxWidth: "710%",
             borderRadius: 8.74,
+
         },
         sampleContent: {
             borderRadius: 8.74,
-            maxWidth: "810%"
+            maxWidth: "810%",
+            maxHeight: '600px'
         },
         tableHeaderColumns: {
             color: 'white',
             width: '200px',
+            fontSize: '10px',
+            height: 1
 
         },
+
+        tableHead: {
+            height: 1,
+            backgroundColor: 'blue'
+        }
 
     });
 
@@ -43,31 +51,33 @@ function SampleTable() {
         event: React.ChangeEvent<HTMLInputElement>
     ) => {
         setRowsPerPage(+event.target.value);
-
         setPage(0);
     };
 
 
     return (
         <React.Fragment>
-            <div className="Teacher-table-background">
+            <div className="report-course-table-container">
                 <div className="teacher-table-title-header">
-                    <h1 className="title-teacherTable">Table Header</h1>
+                    <h1 className="title-header">Course Content</h1>
                 </div>
                 <TableContainer component={Paper} className={classes.sampleContent}>
 
-                    <Table className={classes.table} aria-label="simple table">
-                        <TableHead className="sample-table-header">
+                    <Table padding={"none"} className={classes.table} aria-label="simple table">
+                        <TableHead className={classes.tableHead}>
                             <TableRow >
-                                <TableCell align="center" className={classes.tableHeaderColumns}>name 1</TableCell>
-                                <TableCell align="center" className={classes.tableHeaderColumns}>name 2</TableCell>
-                                <TableCell align="center" className={classes.tableHeaderColumns}>name 3</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Course Name</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Medium</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Description</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Status</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
+                            {array?.map((item) => (
+                                <TableCell align="center" className={classes.tableHeaderColumns}>{item}</TableCell>
+                            ))}
                         </TableBody>
                     </Table>
-
                 </TableContainer>
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
@@ -75,7 +85,6 @@ function SampleTable() {
                     count={5}
                     rowsPerPage={rowsPerPage}
                     page={page}
-                    //classes={{ ul: classes.ul }}
                     SelectProps={{
                         inputProps: { 'aria-label': 'rows per page' },
                         native: true,
@@ -83,7 +92,6 @@ function SampleTable() {
                     component="div"
                     onPageChange={handleChangePage}
                     onRowsPerPageChange={handleChangeRowsPerPage}
-                    //className={classes.table}
                 />
             </div>
         </React.Fragment>
@@ -91,4 +99,4 @@ function SampleTable() {
     )
 }
 
-export default  SampleTable
+export default  CourseReportTable

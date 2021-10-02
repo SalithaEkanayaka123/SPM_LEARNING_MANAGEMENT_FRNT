@@ -1,10 +1,9 @@
-import './PrintableComponent.scss'
+import './CourseReport.scss'
 import React from "react";
-import Logo from "../../companyLogo/Logo.png";
-import {Chart, ChartSeries, ChartSeriesItem, ChartSeriesLabels} from "@progress/kendo-react-charts";
-import sampleData from "../../SampleData/invoice-data.json";
+import Logo from "../../../../Pages/TutorReportPage/companyLogo/Logo.png";
 import axios from "axios";
-class PrintableComponent extends React.Component {
+import CourseReportTable from "./DataSet/SampleTable/CourseReportTable";
+class CourseReport extends React.Component {
 
     state = {
         graphData: []
@@ -29,7 +28,7 @@ class PrintableComponent extends React.Component {
                             <div className="inner-page">
                                 <div className="pdf-header">
 								<span className="company-logo">
-									<img className="company-image" src={Logo} alt="Kendoka Company Logo"/> Tutor Video Resource Report
+									<img className="company-image" src={Logo} alt="Kendoka Company Logo"/> Tutor Course  Report
 								</span>
                                 </div>
                                 <div className="pdf-footer">
@@ -45,9 +44,9 @@ class PrintableComponent extends React.Component {
                                 </div>
                                 <div className="addresses">
                                     <div className="for">
-                                        <h3>File Overview</h3>
+                                        <h3>Course Report</h3>
                                         <p>
-                                            This report shows the file distribution in each course.
+                                            Following courses are active and published in the system under current user.
                                         </p>
                                     </div>
 
@@ -64,21 +63,7 @@ class PrintableComponent extends React.Component {
                                     </div>
                                 </div>
                                 <div className="pdf-chart">
-                                    <Chart style={{ height: 280 }}>
-                                        <ChartSeries>
-                                            <ChartSeriesItem
-                                                type="donut"
-                                                data={this.state.graphData}
-                                                categoryField="category"
-                                                field="count"
-                                            >
-                                                <ChartSeriesLabels
-                                                    color="#fff"
-                                                    background="none"
-                                                />
-                                            </ChartSeriesItem>
-                                        </ChartSeries>
-                                    </Chart>
+                                    <CourseReportTable/>
                                 </div>
                                 <div className="pdf-body">
                                     <div className="custom-grid" id="grid">
@@ -92,4 +77,4 @@ class PrintableComponent extends React.Component {
     }
 }
 
-export default PrintableComponent;
+export default CourseReport;

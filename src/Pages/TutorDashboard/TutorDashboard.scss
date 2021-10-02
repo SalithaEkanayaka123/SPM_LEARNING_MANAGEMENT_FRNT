@@ -1,6 +1,24 @@
 .tutor-dashboard-page {
   background-color: #838383;
   padding: 10px;
+  .report-triggering-button-container {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #525252;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    .report-triggering-button{
+      display:flex;
+      justify-content: center;
+      .button-item {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
 }
 
 //global to all the component.
