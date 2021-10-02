@@ -45,10 +45,11 @@ function LoginComponent(props) {
 
                 const values = response.data;
                 console.log('res1 ', response.data);
-                localStorage.setItem('username', values?.username);
-                localStorage.setItem('status', values?.status);
-                localStorage.setItem('email', values?.email);
-                localStorage.setItem('userid', values?.id);
+                localStorage.setItem('username', response.data?.username);
+                localStorage.setItem('usertype', response.data?.userType);
+                localStorage.setItem('status', response.data?.status);
+                localStorage.setItem('email', response.data?.email);
+                localStorage.setItem('userid', response.data?.id);
 
                 dispatch(loggedUser(response.data))
 
