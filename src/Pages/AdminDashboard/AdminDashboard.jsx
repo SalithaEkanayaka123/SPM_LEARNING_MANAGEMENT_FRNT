@@ -16,7 +16,7 @@ import {
     faUserFriends
 } from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchTeachers, getUserCount} from "../../Action/Users";
+import {fetchStudents, fetchTeachers, getUserCount} from "../../Action/Users";
 import UserReports from "../../Component/Admin/AdminReports/UserReports";
 import Button from "@progress/kendo-react-buttons/dist/es/Button";
 import {Link} from "react-router-dom";
@@ -35,6 +35,7 @@ function AdminDashboard() {
     useEffect(()=> {
         dispatch(getUserCount())
         dispatch(fetchTeachers());
+        dispatch(fetchStudents());
     }, [usertype])
 
 
