@@ -55,7 +55,7 @@ const App = () => {
                   <Route exact path = "/navbarbuttoncomponent2" component={NavBarButtonComponent2}/>
                   <Route exact path = "/emailupdate" component={UserDetailsUpdateComponent}/>
                   <ProtectedRoute exact path = "/class" component={ClassPage}/>
-                  <Route exact path = "/ClassCourseview" component={ClassCourseview}/>
+                  <ProtectedRoute exact path = "/ClassCourseview" component={ClassCourseview}/>
                   <Route exact path = "/singleclassview" component={SingleClassView}/>
                   <Route exact path = "/download" component={DownloadFile}/>
                   <Route exact path = "/teacherstatuspopup" component={PopUpTeacherStatusComponent}/>
