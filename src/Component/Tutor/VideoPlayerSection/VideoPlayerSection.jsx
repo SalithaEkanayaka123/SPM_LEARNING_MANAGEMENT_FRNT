@@ -32,9 +32,9 @@ function VideoPlayerSection() {
 
 
     const array1 =[
-        {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
-        {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
-        {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
+        {"image":"http://placeimg.com/640/480/arch", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
+        {"image":"http://placeimg.com/640/480/arch", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
+        {"image":"http://placeimg.com/640/480/arch", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
         {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
         {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
         {"image":"http://placeimg.com/180/100/nature", "url":"https://www.youtube.com/watch?v=wGixQPuG1GY"},
