@@ -20,6 +20,7 @@ import AnnouncementPrintableComponent from "../../AdminReportPage/AnnouncementPr
 import PrintableComponent from "../../../Component/Tutor/TutorReports/FileReport/PrintableComponent";
 import CourseReport from "../../../Component/Tutor/TutorReports/CourseReport/CourseReport";
 import VideoStatsReport from "../../../Component/Tutor/TutorReports/VideoStatsReport/VideoStatsReport";
+import TransactionReport from "../../../Component/Report/Transaction/TransactionReport";
 
 
 
@@ -42,10 +43,9 @@ function ReactToPrintClass() {
     const [tclass, setTClass] = useState(null);
     const [tutor2, setTutor2] = useState(null);
     const [tutor3, setTutor3] = useState(null);
-
     const [tAnn, setTann] = useState(null);
-
     const [admin1, setAdmin1] = useState(null);
+    const [admin2, setAdmin2] = useState(null);
 
 
     //Testing
@@ -81,6 +81,8 @@ function ReactToPrintClass() {
             setTutor2("tutor2");
         } else if(age?.type ==="tutor3"){
             setTutor3("tutor3");
+        } else if(age?.type ==="admin2"){
+            setAdmin2("admin2");
         }
 
     },[])
@@ -125,6 +127,7 @@ function ReactToPrintClass() {
                     tclass ? <AdminPrintableComponent className="component-to-print" ref={el => (componentRef = el)}/> :
                         tAnn ? <AnnouncementPrintableComponent className="component-to-print" ref={el => (componentRef = el)}/> :
                         tutor2 ? <CourseReport className="component-to-print" ref={el => (componentRef = el)}/> :
+                        admin2 ? <TransactionReport className="component-to-print" ref={el => (componentRef = el)}/> :
                             tutor3 ? <VideoStatsReport className="component-to-print" ref={el => (componentRef = el)}/> :
                         payment? "Payment report component comes here!":
                             tAnn? "Class report component comes here!":

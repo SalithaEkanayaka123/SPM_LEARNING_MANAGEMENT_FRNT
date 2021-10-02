@@ -107,6 +107,7 @@ function AdminDashboard() {
                     >Check Announcement Report</Button>
                 </Link>
             </div>
+            <AllTransations/>
         <br/>
             <Footer/>
         </div>

@@ -12,7 +12,7 @@ class CourseReport extends React.Component {
     // Async method to return the data.
     // Plug the data to the chart.
     async componentDidMount() {
-        await axios.get(`http://localhost:8073/api/tutor/charts`)
+        await axios.get(`http://localhost:8073/api/courses`)
             .then(res => {
                 const graphData = res.data;
                 this.setState({graphData});
@@ -63,7 +63,7 @@ class CourseReport extends React.Component {
                                     </div>
                                 </div>
                                 <div className="pdf-chart">
-                                    <CourseReportTable/>
+                                    <CourseReportTable array={this.state.graphData}/>
                                 </div>
                                 <div className="pdf-body">
                                     <div className="custom-grid" id="grid">
