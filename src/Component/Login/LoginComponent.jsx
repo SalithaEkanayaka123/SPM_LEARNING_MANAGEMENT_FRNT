@@ -94,8 +94,8 @@ function LoginComponent(props) {
     }
     const NavigateToRegistration = () => {
         //window.location.href("/registration")
-        //window.location.href = "/registration";
-        history.push('/registration')
+        window.location.href = "/registration";
+        //history.push('/registration')
     }
 
     return (

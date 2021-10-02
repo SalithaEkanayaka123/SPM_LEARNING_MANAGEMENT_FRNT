@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getallTransactions} from "../../../Action/Payment";
 import PaymentForm from "../../Payment/PaymentForm";
@@ -9,11 +9,23 @@ import Button from "@progress/kendo-react-buttons/dist/es/Button";
 function AllTransations () {
 
     const dispatch = useDispatch();
-    const response = useSelector((state) => state.paymentDetails.paymentDetails.records);
+
+    let response = useSelector((state) => state.paymentDetails.paymentDetails.records);
 
     useEffect(() => {
         dispatch(getallTransactions());
     },[])
+
+    response = [
+        {"tid":"T001", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU001", "type":"income","courseid":"C001" },
+        {"tid":"T002", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T003", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C001" },
+        {"tid":"T004", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T005", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU003", "type":"income","courseid":"C001" },
+        {"tid":"T006", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T007", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C002" }
+    ]
+    const [transactionData, setTransactionData] = useState(response)
 
     return(
         <div className="AllTransations-continer">
@@ -36,7 +48,7 @@ function AllTransations () {
                         <th className='table-head-row-col'>Type</th>
                         <th className='table-head-row-col'>Course ID</th>
                     </tr>
-                    {response.map((row,index) => (
+                    {response?.map((row,index) => (
                         <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>
                             <td className='table-data-row-col'>{row.tid}</td>
                             <td className='table-data-row-col'>{row.date}</td>

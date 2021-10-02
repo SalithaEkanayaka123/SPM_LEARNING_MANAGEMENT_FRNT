@@ -85,6 +85,7 @@ function ClassDetailsTable({method}) {
     const handleChangeRowsPerPage = (
         event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     ) => {
+        //check
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
@@ -165,7 +166,7 @@ function ClassDetailsTable({method}) {
                                         return val
                                     }
                                 })
-                                // slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => (
                                         console.log(row),
                                     <StyledTableRow key={row.id} >

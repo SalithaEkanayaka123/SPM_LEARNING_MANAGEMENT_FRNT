@@ -3,10 +3,13 @@ export const ADD_USER = 'ADD_USER';
 export const VALID_USER = 'VALID_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const DELETE_USER = 'DELETE_USER';
-export const GET_USER = 'GET_USER';
+export const GET_USER = 'GET_USER';//FETCH_STUDENTS
+export const FETCH_STUDENTS = 'FETCH_STUDENTS';//
+export const FETCH_TEACHERS = 'FETCH_TEACHERS';//
 export const GET_USER_COUNT = 'GET_USER_COUNT';
 export const ERROR_USER = 'ERROR_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
+
 export const GET_TEACHER_STATUS_COUNT = 'GET_TEACHER_STATUS_COUNT';
 
 //Course Related Constants.

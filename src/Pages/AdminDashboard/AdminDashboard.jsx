@@ -30,7 +30,7 @@ function AdminDashboard() {
     const dispatch = useDispatch();
     //getUserCount
     const response = useSelector((state) => state.userDetails1?.usercount?.data);
-    const teacherDetails = useSelector((store) => store.userDetails1?.UserDetails?.records?.data);
+    const teacherDetails = useSelector((store) => store.userDetails1?.UserDetails?.teacherRecords?.data);
     console.log(teacherDetails)
     useEffect(()=> {
         dispatch(getUserCount())
@@ -75,12 +75,14 @@ function AdminDashboard() {
                 <ClassMgntInt/>
                 <ClassDetailsTable method={setTableClass}/>
             </div>
+            <AllTransations/>
             <br/>
             <TeacherTableComponent teacherdetails = {teacherDetails}/>
             <br/>
             <UserReports/>
             <br/>
             <AnnouncementSection array1={array1}/>
+
             <div className="report-section">
 
                 <Link to={{

@@ -28,7 +28,7 @@ function ClassMgntInt() {
     const [teacherOptions, setTeacherOptions] = useState(null);
     console.log('teacherOptions',teacherOptions);
     //teacher data
-    const teacherResponse = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
+    const teacherResponse = useSelector((store) => store.userDetails1?.UserDetails?.teacherRecords?.data);
     console.log('teacherResponse',teacherResponse);
 
     useEffect(() => {

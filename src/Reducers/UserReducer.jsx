@@ -6,12 +6,14 @@ import {
     FETCH_USERS,
     VALID_USER,
     ERROR_USER,
-    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT
+    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT, FETCH_STUDENTS, FETCH_TEACHERS
 } from "../Action/types";
 
 const initialState = {
     UserDetails: {
         records: [],
+        studentRecords: [],
+        teacherRecords: [],
         record: [],
         success: null,
         error: null,
@@ -34,6 +36,26 @@ export default function (state = initialState, action){
                 UserDetails: {
                     ...state.UserDetails,
                     records: action.payload,
+                    error: action.error
+                }
+            }
+        case FETCH_STUDENTS:
+            console.log('reducer', action.payload);
+            return {
+                ...state,
+                UserDetails: {
+                    ...state.UserDetails,
+                    studentRecords: action.payload,
+                    error: action.error
+                }
+            }
+        case FETCH_TEACHERS:
+            console.log('reducer', action.payload);
+            return {
+                ...state,
+                UserDetails: {
+                    ...state.UserDetails,
+                    teacherRecords: action.payload,
                     error: action.error
                 }
             }
@@ -63,6 +85,7 @@ export default function (state = initialState, action){
                 ...state,
                 editDetail: action.payload
             }
+
         case VALID_USER:
             console.log('reducer');
             console.log('reducer1 ',action.payload);

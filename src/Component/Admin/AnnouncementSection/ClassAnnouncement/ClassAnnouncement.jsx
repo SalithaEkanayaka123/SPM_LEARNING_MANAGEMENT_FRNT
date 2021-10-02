@@ -6,7 +6,7 @@ import {addAnnouncement, getAnnouncements} from "../../../../Action/Announcement
 import Select from "react-select";
 import {InputLabel, MenuItem} from "@material-ui/core";
 import {getClasses} from "../../../../Action/Class";
-import {fetchTeachers} from "../../../../Action/Users";
+
 import {Form} from "react-bootstrap";
 
 const customStyles = {
