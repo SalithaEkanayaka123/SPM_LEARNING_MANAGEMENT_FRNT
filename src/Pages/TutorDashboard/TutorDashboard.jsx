@@ -22,6 +22,7 @@ import {Container, Grid} from "@material-ui/core";
 import {fetchStudents, getUserCount} from "../../Action/Users";
 import {Link} from "react-router-dom";
 import Button from "@progress/kendo-react-buttons/dist/es/Button";
+import AllTransations from "../../Component/Admin/AllTransations/AllTransations";
 
 function TutorDashboard() {
 
@@ -172,6 +173,7 @@ function TutorDashboard() {
                                   setTrigger={setTrigger}
                                   triggerHeader={triggerData}
                     />
+                    <AllTransations/>
                 </Container>
             </div>
         )

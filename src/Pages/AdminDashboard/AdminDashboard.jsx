@@ -75,12 +75,14 @@ function AdminDashboard() {
                 <ClassMgntInt/>
                 <ClassDetailsTable method={setTableClass}/>
             </div>
+            <AllTransations/>
             <br/>
             <TeacherTableComponent teacherdetails = {teacherDetails}/>
             <br/>
             <UserReports/>
             <br/>
             <AnnouncementSection array1={array1}/>
+
             <div className="report-section">
 
                 <Link to={{
