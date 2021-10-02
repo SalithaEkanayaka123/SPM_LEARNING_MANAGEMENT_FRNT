@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {getallTransactions} from "../../../Action/Payment";
 import PaymentForm from "../../Payment/PaymentForm";
 import './styles.css'
+import {Link} from "react-router-dom";
+import Button from "@progress/kendo-react-buttons/dist/es/Button";
 
 function AllTransations () {
 
@@ -48,6 +50,12 @@ function AllTransations () {
                     ))}
                 </table>
                 <div>
+                    <div className="button-item">
+                        <Link to={{
+                            pathname: '/report',
+                            age: {type: "tutor3"}
+                        }}><Button primary={true}>Generate Report</Button></Link>
+                    </div>
                 </div>
             </div>
 
