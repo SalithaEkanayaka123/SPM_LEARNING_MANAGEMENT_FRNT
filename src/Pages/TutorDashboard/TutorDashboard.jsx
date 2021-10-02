@@ -47,21 +47,6 @@ function TutorDashboard() {
         }
     },[])
 
-        const response = useSelector((state) => state.userDetails1?.usercount?.data);
-        const response1 = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
-
-        //Method to fetch all the feedback information.
-        async function getItems() {
-            const response = await axios.get("http://localhost:8073/feedback");
-            const data = response.data;
-            const options = data.map(item => ({
-                "header": item.name,
-                "description": item.message,
-            }))
-            setFeedback(options);
-        }
-        getItems();
-    }, [])
 
     const response = useSelector((state) => state.userDetails1?.usercount?.data);
     const response1 = useSelector((state) => state.userDetails1?.UserDetails?.studentRecords?.data);
