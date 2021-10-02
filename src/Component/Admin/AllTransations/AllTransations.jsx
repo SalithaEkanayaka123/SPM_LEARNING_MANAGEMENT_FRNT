@@ -4,8 +4,6 @@ import {getallTransactions} from "../../../Action/Payment";
 import PaymentForm from "../../Payment/PaymentForm";
 import './styles.css'
 
-
-
 function AllTransations () {
 
     const dispatch = useDispatch();
