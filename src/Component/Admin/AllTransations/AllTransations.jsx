@@ -6,21 +6,13 @@ import './styles.css'
 import {Link} from "react-router-dom";
 import Button from "@progress/kendo-react-buttons/dist/es/Button";
 
-function AllTransations () {
+function AllTransations ({response}) {
 
     const dispatch = useDispatch();
 
     let data = useSelector((state) => state.paymentDetails.paymentDetails.records);
 
-    const response = [
-        {"tid":"T001", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU001", "type":"income","courseid":"C001" },
-        {"tid":"T002", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
-        {"tid":"T003", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C001" },
-        {"tid":"T004", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU002", "type":"income","courseid":"C001" },
-        {"tid":"T005", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU003", "type":"income","courseid":"C001" },
-        {"tid":"T006", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
-        {"tid":"T007", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C002" }
-    ]
+
     const [transactionData, setTransactionData] = useState(response);
     const [searchTerm, setSearchTerm] = useState("");
     console.log('transactionData ',transactionData)
@@ -38,7 +30,11 @@ function AllTransations () {
                         <div className='Trasaction-sub-header'>Course Transaction History</div>
                     </div>
                     <div className='search-form'>
-                        <input className='input-field' type='text' placeholder='Search Trasaction...'/>
+                        <input className='input-field'
+                               type='text'
+                               placeholder='Search Trasaction...'
+                               value={searchTerm}
+                               onChange={(e) => setSearchTerm(e.target.value)}/>
                     </div>
                 </div>
                 <table className='Trasaction-table-container'>
@@ -52,10 +48,14 @@ function AllTransations () {
                         <th className='table-head-row-col'>Course ID</th>
                     </tr>
                     {response?.filter((val) => {
+                        console.log('val  ',val)
                         if(searchTerm == ""){
-                            return val
-                        }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
-                            return val
+
+                            return val;
+                        }else if(val?.amount?.toLowerCase().includes(searchTerm.toLowerCase())){
+                            return val;
+                        }else if(val?.description?.toLowerCase().includes(searchTerm.toLowerCase())){
+                            return val;
                         }
                     })?.map((row,index) => (
                         <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>
