@@ -35,7 +35,6 @@ function AdminDashboard() {
     useEffect(()=> {
         dispatch(getUserCount())
         dispatch(fetchTeachers());
-        dispatch(fetchStudents());
     }, [usertype])
 
 

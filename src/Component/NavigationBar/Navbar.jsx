@@ -77,8 +77,8 @@ function Navbar () {
                             </Link>
                         </li>
                         <li className= "nav-item">
-                            <Link to= '/ClassCourseview' className ="nav-links" onClick={closeMobileMenu}>
-                                Course
+                            <Link to= '/profile' className ="nav-links" onClick={closeMobileMenu}>
+                                Profile
                             </Link>
                         </li>
 

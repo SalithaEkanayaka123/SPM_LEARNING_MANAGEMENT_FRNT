@@ -85,11 +85,7 @@ function TutorDashboard() {
         getCourses();
     }, [])
 
-    useEffect(()=> {
-        dispatch(getUserCount())
-        dispatch(fetchTeachers());
-        dispatch(fetchStudents());
-    }, [])
+
 
     //Get Course Data
     const getCourses = () => {

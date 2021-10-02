@@ -8,12 +8,7 @@ import {useDispatch} from "react-redux";
 import {fetchStudents, fetchTeachers, getUserCount} from "../../Action/Users";
 
 function LoginPage() {
-    const dispatch = useDispatch();
-    useEffect(()=> {
-        dispatch(getUserCount())
-        dispatch(fetchTeachers());
-        dispatch(fetchStudents());
-    }, [])
+
     const [background, setBackground] = useState('#D6D6D6');
     return (
         <div  className="background-log">
