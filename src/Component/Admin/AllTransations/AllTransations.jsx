@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {getallTransactions} from "../../../Action/Payment";
 import PaymentForm from "../../Payment/PaymentForm";
@@ -9,6 +9,7 @@ import Button from "@progress/kendo-react-buttons/dist/es/Button";
 function AllTransations () {
 
     const dispatch = useDispatch();
+
     let response = useSelector((state) => state.paymentDetails.paymentDetails.records);
 
     useEffect(() => {
@@ -24,6 +25,7 @@ function AllTransations () {
         {"tid":"T006", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
         {"tid":"T007", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C002" }
     ]
+    const [transactionData, setTransactionData] = useState(response)
 
     return(
         <div className="AllTransations-continer">
