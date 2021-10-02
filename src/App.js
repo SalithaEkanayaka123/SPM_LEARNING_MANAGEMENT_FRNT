@@ -22,7 +22,12 @@ import VideoResourcePage from "./Pages/VideoResourcePage/VideoResourcePage";
 import PopUpUpdate from "./Component/Admin/ClassMgntInt/PopUpUpdate/PopUpUpdate";
 import ReactToPrintClass from "./Pages/TutorReportPage/ReactToPrint/ReactToPrint";
 import TestingReport from "./Component/Report/TestingReport";
+
+
 import TutorReportPage from "./Pages/TutorReportPage/TutorReportPage";
+import TestingReport2 from "./Component/Report/TestingReport2";
+import TestingReport3 from "./Component/Report/TestingReport3";
+
 
 
 
@@ -51,7 +56,7 @@ const App = () => {
                   <Route exact path = "/emailupdate" component={UserDetailsUpdateComponent}/>
                   <ProtectedRoute exact path = "/class" component={ClassPage}/>
                   <Route exact path = "/ClassCourseview" component={ClassCourseview}/>
-                  <ProtectedRoute exact path = "/singleclassview" component={SingleClassView}/>
+                  <Route exact path = "/singleclassview" component={SingleClassView}/>
                   <Route exact path = "/download" component={DownloadFile}/>
                   <Route exact path = "/teacherstatuspopup" component={PopUpTeacherStatusComponent}/>
                   <Route exact path = "/customvideoplayer" component={CustomVideoPlayerComponent}/>
@@ -59,7 +64,7 @@ const App = () => {
                   <Route exact path = "/report" component={ReactToPrintClass}/>
                   <Route exact path = "/reportold" component={TutorReportPage}/>
                   <Route exact path = "/popup" component={PopUpUpdate}/>
-                  <Route exact path = "/tes" component={TestingReport}/>
+                  <Route exact path = "/tes" component={TestingReport3}/>
               </Switch>
           </BrowserRouter>
   )

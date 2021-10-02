@@ -20,22 +20,19 @@ import TableFooter from "@material-ui/core/TableFooter";
 
 
 
-const StudentTableComponent = ()  => {
+const StudentTableComponent = (props)  => {
+    console.log(props?.response1)
     const dispatch = useDispatch();
     const history = useHistory();
     const [searchTerm, setSearchTerm] = useState("");
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const [page, setPage] = React.useState(0);
     //const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
-    const response = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
-    console.log(response);
-    const [filteredData, setFilteredData] = useState(response);
+    const [filteredData, setFilteredData] = useState(props?.response1);
+    let usertype = localStorage.getItem("usertype")
 
     useEffect(() => {
         setPage(0);
-        console.log('calling')
-        dispatch(fetchStudents());
     },[])
 
     const deleteStudent = (id) => {
@@ -110,33 +107,35 @@ const StudentTableComponent = ()  => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {response?.filter((val) => {
-                            if(searchTerm == ""){
+                        {props?.response1?.filter((val) => {
+                            console.log(props?.response1)
+                            if(searchTerm.trim() === ""){
                                 return val
-                            }else if(val?.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                            }
+                            else if(val?.name.toLowerCase().includes(searchTerm?.toLowerCase())){
                                 return val
-                            }else if(val?.email.toLowerCase().includes(searchTerm.toLowerCase())){
+                            }else if(val?.email.toLowerCase().includes(searchTerm?.toLowerCase())){
                                 return val
-                            }else if(val?.age.toLowerCase().includes(searchTerm.toLowerCase())){
+                            }else if(val?.age.toLowerCase().includes(searchTerm?.toLowerCase())){
                                 return val
-                            }else if(val?.username.toLowerCase().includes(searchTerm.toLowerCase())){
+                            }else if(val?.username.toLowerCase().includes(searchTerm?.toLowerCase())){
                                 return val
-                            }else if(val?.type.toLowerCase().includes(searchTerm.toLowerCase())){
+                            }else if(val?.type.toLowerCase().includes(searchTerm?.toLowerCase())){
                                 return val
                             }
                         })
-                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                            .map((row) => (
+                            ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                            ?.map((row) => (
                             console.log(row),
                                 <TableRow>
-                                    <TableCell align="center"> {row.name} </TableCell>
-                                    <TableCell align="center"> {row.email} </TableCell>
-                                    <TableCell align="center"> {row.age} </TableCell>
-                                    <TableCell align="center"> {row.username} </TableCell>
-                                    <TableCell align="center"> {row.type} </TableCell>
+                                    <TableCell align="center"> {row?.name} </TableCell>
+                                    <TableCell align="center"> {row?.email} </TableCell>
+                                    <TableCell align="center"> {row?.age} </TableCell>
+                                    <TableCell align="center"> {row?.username} </TableCell>
+                                    <TableCell align="center"> {row?.type} </TableCell>
                                     <TableCell align="center">
                                         <a onClick={() => {
-                                            deleteStudent(row.id)}} > <img src= {studentDeleting1}  className="studentDelete-image1"/> </a>
+                                            deleteStudent(row?.id)}} > <img src= {studentDeleting1}  className="studentDelete-image1"/> </a>
                                     </TableCell>
                                 </TableRow>
                         ))

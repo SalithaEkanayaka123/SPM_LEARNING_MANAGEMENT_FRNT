@@ -1,16 +1,16 @@
 .announcement-container {
   background-color: #525252;
-  width: 500px;
-  height: 500px;
+  width: 390px;
+  height: 390px;
+  margin-left: 15px;
   border-radius: 30px;
   padding-bottom: 20px;
-  padding-right: 10px;
+  margin-bottom: 10px;
 }
 .announcement-container .announcement-body {
-  padding-left: 10px;
   padding-bottom: 10px;
   color: white;
-  height: 400px;
+  height: 350px;
   margin-left: 10px;
 }
 .announcement-container .announcement-body .input-form-container {
@@ -25,7 +25,7 @@
   color: white;
 }
 .announcement-container .announcement-body .input-form-container .form .form-input {
-  width: 430px;
+  width: 350px;
   padding: 12px 20px;
   margin-right: 20px;
   display: inline-block;
@@ -34,8 +34,8 @@
   box-sizing: border-box;
 }
 .announcement-container .announcement-body .input-form-container .form .form-area {
-  width: 430px;
-  height: 250px;
+  width: 350px;
+  height: 140px;
   padding: 12px 20px;
   margin-right: 20px;
   display: inline-block;
@@ -46,7 +46,6 @@
 .announcement-container .announcement-body .announcement-body-button-group {
   margin-top: 10px;
   display: flex;
-  margin-left: 20px;
 }
 .announcement-container .announcement-body .announcement-body-button-group .announcement-button {
   margin-right: 10px;

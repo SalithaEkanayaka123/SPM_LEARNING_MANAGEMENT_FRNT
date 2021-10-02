@@ -1,10 +1,12 @@
 .inquiry-container {
   background-color: #525252;
-  width: 500px;
-  height: 500px;
+  width: 390px;
+  margin-left: 15px;
+  height: 390px;
   border-radius: 30px;
   padding-bottom: 20px;
   padding-right: 10px;
+  margin-bottom: 10px;
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
   /* Chrome, Edge, and Safari */
@@ -30,7 +32,7 @@
   color: white;
   overflow: scroll;
   overflow-x: hidden;
-  height: 400px;
+  height: 280px;
   margin-left: 10px;
   margin-bottom: 10px;
 }

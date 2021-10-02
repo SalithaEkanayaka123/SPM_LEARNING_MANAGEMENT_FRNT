@@ -1,5 +1,5 @@
 import React from 'react'
-import "./CustomRow.css"
+import "./CustomRow.scss"
 import CustomButton from "../CustomButtons/CustomButton";
 function CustomRow({id, header, description, body, deleteMethod}) {
 

@@ -17,6 +17,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchTeachers, getUserCount} from "../../Action/Users";
+import UserReports from "../../Component/Admin/AdminReports/UserReports";
+import Button from "@progress/kendo-react-buttons/dist/es/Button";
+import {Link} from "react-router-dom";
+import Footer from "../../Component/Footer/Footer";
 
 
 function AdminDashboard() {
@@ -26,11 +30,14 @@ function AdminDashboard() {
     const dispatch = useDispatch();
     //getUserCount
     const response = useSelector((state) => state.userDetails1?.usercount?.data);
-    const teacherdetails = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
+    const teacherDetails = useSelector((store) => store.userDetails1?.UserDetails?.records?.data);
+    console.log(teacherDetails)
     useEffect(()=> {
         dispatch(getUserCount())
         dispatch(fetchTeachers());
-    }, [])
+    }, [usertype])
+
+
 
     useEffect(()=> {
         if(usertype != "admin"){
@@ -69,9 +76,41 @@ function AdminDashboard() {
                 <ClassDetailsTable method={setTableClass}/>
             </div>
             <br/>
-            <TeacherTableComponent teacherdetails = {teacherdetails}/>
+            <TeacherTableComponent teacherdetails = {teacherDetails}/>
+            <br/>
+            <UserReports/>
+            <br/>
             <AnnouncementSection array1={array1}/>
+            <div className="report-section">
+
+                <Link to={{
+                    pathname: '/report',
+                    age: {type: "tclass"}
+                }}>
+                    <Button
+                        style={{ marginLeft: "300px", width: "300px", height:"60px" , background:'#7e65b0'}}
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                    >Check Class Report</Button>
+                </Link>
+
+                <Link to={{
+                    pathname: '/report',
+                    age: {type: "tAnn"}
+                }}>
+                    <Button
+                        style={{ marginLeft: "200px", width: "300px", height:"60px" , background:'#7e65b0'}}
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                    >Check Announcement Report</Button>
+                </Link>
+            </div>
+        <br/>
+            <Footer/>
         </div>
+
 
     )
 }

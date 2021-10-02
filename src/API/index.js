@@ -15,6 +15,7 @@ export const createCourse = (course) => axios.post(url + "course", course);
 
 //add class
 export const createClass = (clz) => axios.post(url + "class", clz);
+export const createClassNew = (clz2) => axios.post(url + "single/upload/image", clz2);
 
 //add announcement
 export const createAnnouncement = (announcement) => axios.post(url + "announcement", announcement);

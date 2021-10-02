@@ -29,7 +29,7 @@
     .tutorial-home-section-body {
       display: flex;
       padding-top: 40px;
-      margin-left: 140px;
+
       padding-bottom: 50px;
       .tutorial-home-section-body-res-layout {
         display: grid;
@@ -69,7 +69,8 @@
     .tutorial-display-flex {
       display: flex;
       .custom-button-tutor-section {
-        margin-left: 680px;
+        justify-content: right;
+        margin-left: 30%;
       }
       .tutorial-home-section-header{
         padding: 10px;
@@ -83,6 +84,7 @@
           color: #BABABA;
           font-weight: normal;
         }
+
     }
   }
 }

@@ -1,5 +1,5 @@
 .inquiry-custom-row-container {
-  width: 450px;
+  width: 340px;
   color: black;
   margin-bottom: 10px;
   height: 63px;
@@ -13,6 +13,7 @@
 .inquiry-custom-row-container .inquiry-custom-row-flex .inquiry-custom-row-header {
   font-size: 20.6px;
   font-weight: bold;
+  overflow: hidden;
   font-family: "Helvetica", "Verdana", serif;
   padding: 10px;
 }
@@ -21,7 +22,8 @@
   font-weight: normal;
   margin-top: -25px;
   margin-bottom: 9px;
-  width: 400px;
+  width: 280px;
+  overflow: hidden;
   font-family: "Helvetica", "Verdana", serif;
   padding: 10px;
 }
@@ -30,6 +32,7 @@
   height: 63px;
   padding: 16px;
   width: auto;
+  margin-right: 10px;
   background-color: #F9BD7A;
   font-style: italic;
   border-radius: 0px 8.74px 8.74px 0px;

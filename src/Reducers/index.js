@@ -5,6 +5,7 @@ import errorsReducer from './errorsReducer'
 import classes from './Classes'
 import paymentDetails from './PaymentData'
 import Announcement from './Announcement'
+import images from './ClassesNew'
 
 export default combineReducers({
     userDetails1: UserReducer,
@@ -12,6 +13,7 @@ export default combineReducers({
     paymentDetails:paymentDetails,
     courses,
     classes,
-    Announcement
+    Announcement,
+    images,
 
 });

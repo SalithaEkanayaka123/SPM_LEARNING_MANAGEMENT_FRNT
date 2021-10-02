@@ -6,7 +6,7 @@ import {
     FETCH_USERS,
     VALID_USER,
     ERROR_USER,
-    GET_USER_COUNT, LOGOUT_USER
+    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT
 } from "../Action/types";
 
 const initialState = {
@@ -15,7 +15,8 @@ const initialState = {
         record: [],
         success: null,
         error: null,
-        usercount: []
+        usercount: [],
+        teachercount: []
     },
     editDetail: [],
     loginUser: {},
@@ -97,6 +98,7 @@ export default function (state = initialState, action){
                 usercount: action.payload
 
             }
+
         default:
             return state;
     }

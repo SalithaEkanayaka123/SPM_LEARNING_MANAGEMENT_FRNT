@@ -38,7 +38,6 @@ function TeacherTableComponent(props) {
 
     useEffect(() => {
         setPage(0);
-        console.log('calling')
 
     },[])
 
@@ -89,7 +88,6 @@ function TeacherTableComponent(props) {
 
 
     const buttonStatus = (id, status) => {
-        //console.log(value)
         setPopupId(id);
         setPopupStatus(status);
         setButtonPopup(true);
@@ -133,17 +131,18 @@ function TeacherTableComponent(props) {
                         <TableBody>
 
                             {props?.teacherdetails?.filter((val) => {
-                                if(searchTerm == ""){
+                                console.log(props?.teacherdetails)
+                                if(searchTerm.trim() === ""){
                                     return val
-                                }else if(val?.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                                }else if(val?.name.toLowerCase().includes(searchTerm?.toLowerCase())){
                                     return val
-                                }else if(val?.email.toLowerCase().includes(searchTerm.toLowerCase())){
+                                }else if(val?.email.toLowerCase().includes(searchTerm?.toLowerCase())){
                                     return val
-                                }else if(val?.age.toLowerCase().includes(searchTerm.toLowerCase())){
+                                }else if(val?.age.toLowerCase().includes(searchTerm?.toLowerCase())){
                                     return val
-                                }else if(val?.username.toLowerCase().includes(searchTerm.toLowerCase())){
+                                }else if(val?.username.toLowerCase().includes(searchTerm?.toLowerCase())){
                                     return val
-                                }else if(val?.type.toLowerCase().includes(searchTerm.toLowerCase())){
+                                }else if(val?.type.toLowerCase().includes(searchTerm?.toLowerCase())){
                                     return val
                                 }
                             })

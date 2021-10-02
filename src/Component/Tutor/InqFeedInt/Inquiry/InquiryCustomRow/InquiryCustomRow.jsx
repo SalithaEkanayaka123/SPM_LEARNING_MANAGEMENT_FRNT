@@ -1,5 +1,5 @@
 import React from 'react'
-import "./InquiryCustomRow.css"
+import "./InquiryCustomRow.scss"
 function InquiryCustomRow({header, description, setTrigger, setTriggerData, triggerData}) {
     //Logic to open the popup menu.
     const popUpMenuTrigger = () => {

@@ -13,11 +13,11 @@ import {green} from "@material-ui/core/colors";
 import TableFooter from '@material-ui/core/TableFooter';
 import TablePagination from '@material-ui/core/TablePagination';
 import {useDispatch, useSelector} from "react-redux";
-import {deleteClasses, getClasses} from "../../../Action/Class";
+import {deleteClasses, getClasses, getClassesNew} from "../../../Action/Class";
 import './ClassDetails.css'
-import {TextField} from "@material-ui/core";
+import {Button, TextField} from "@material-ui/core";
 import PopUpUpdate from "../ClassMgntInt/PopUpUpdate/PopUpUpdate";
-
+import CloudDownloadTwoToneIcon from '@material-ui/icons/CloudDownloadTwoTone';
 
 const StyledTableCell = withStyles((theme: Theme) =>
     createStyles({
@@ -61,12 +61,13 @@ function ClassDetailsTable({method}) {
     // const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
     const dispatch = useDispatch();
     const [searchTerm, setSearchTerm] = useState("");
-    const classDetails = useSelector((state) => state.classes.classRecords.records);
+    const classDetails = useSelector((state) => state.classes?.classRecords?.records);
+    console.log(classDetails);
     const [filteredData, setFilteredData] = useState(classDetails);
     const [popupData,setPopupData] = useState("");
     React.useEffect(() => {
         // setIsLoading(dataLoading);
-        dispatch(getClasses());
+        dispatch(getClassesNew());
     }, []);
 
     const updateClass = (id) => {
@@ -104,6 +105,27 @@ function ClassDetailsTable({method}) {
 
         // setTimeout(() => dispatch(getClasses()), 1000);
     }
+
+    const handleCellClick = (row) => {
+        console.log('calling onclick',row)
+
+    }
+
+    // File Download method.
+    async function downloadImages (imageName) {
+        fetch(`http://localhost:8073/api/download/image/${imageName}`)
+            .then(response => {
+                response.blob().then(blob => {
+                    let url = window.URL.createObjectURL(blob);
+                    let a = document.createElement('a');
+                    a.href = url;
+                    a.download = `${imageName}`;
+                    a.click();
+                });
+
+            });
+    }
+
     return (
         <React.Fragment>
             <div className="classTableBackground">
@@ -130,7 +152,7 @@ function ClassDetailsTable({method}) {
                                     <TableCell align="center" className="classTablerow">Class name</TableCell>
                                     <TableCell align="center" className="classTablerow">Description</TableCell>
                                     <TableCell align="center" className="classTablerow">Teacher name</TableCell>
-                                    {/*<TableCell align="center" className="classTablerow">Image</TableCell>*/}
+                                    <TableCell align="center" className="classTablerow">Image</TableCell>
                                     <TableCell align="center" className="classTablerow">Delete</TableCell>
                                     <TableCell align="center" className="classTablerow">Update</TableCell>
                                 </TableRow>
@@ -146,12 +168,16 @@ function ClassDetailsTable({method}) {
                                 // slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                     .map((row) => (
                                         console.log(row),
-                                    <StyledTableRow key={row.id}>
+                                    <StyledTableRow key={row.id} >
                                         {/*<StyledTableCell align="center">{row.id}</StyledTableCell>*/}
                                         <StyledTableCell align="center">{row.name}</StyledTableCell>
                                         <StyledTableCell align="center">{row.description}</StyledTableCell>
                                         <StyledTableCell align="center">{row.tutorName}</StyledTableCell>
                                         {/*<StyledTableCell align="center">{row.image}</StyledTableCell>*/}
+                                        <TableCell align="center">
+                                            <CloudDownloadTwoToneIcon  color="secondary" style={{fontSize: 35 }}
+                                            onClick={() => downloadImages(`${row.image}`)} />
+                                        </TableCell>
                                         <TableCell align="center">
                                             <DeleteIcon  color="primary" style={{fontSize: 35 }}
                                             onClick={() => {confirmDelete(row.id)}}/>
@@ -176,6 +202,7 @@ function ClassDetailsTable({method}) {
                                             inputProps: { 'aria-label': 'rows per page' },
                                             native: true,
                                         }}
+                                        component="div"
                                         onPageChange={handleChangePage}
                                         onRowsPerPageChange={handleChangeRowsPerPage}
                                     />

@@ -1,28 +1,29 @@
 .course-tile-container {
-  width: 13.0208333333vw;
-  height: 13.0208333333vw;
+  width: 200px;
+  height: 200px;
   background-color: #7D75A4;
   border-radius: 30px;
-  margin: 1.5%;
-  position: relative;
+  margin: 20px;
 }
 .course-tile-container .top-container {
+  font-family: Roboto, serif;
   color: #FFFFFF;
   padding: 10px;
   text-align: right;
 }
 .course-tile-container .top-container .main-heading {
-  font-size: 1.25vw;
+  font-size: 20px;
   font-weight: bold;
+  margin-right: 10px;
 }
 .course-tile-container .top-container .sub-heading {
-  font-size: 0.8463541667vw;
-}
-.course-tile-container .image-container {
-  position: relative;
+  font-size: 10px;
 }
 .course-tile-container .image-container img {
-  width: 6.5104166667vw;
+  margin-top: 30px;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

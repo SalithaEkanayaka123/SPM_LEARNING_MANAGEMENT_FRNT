@@ -6,7 +6,7 @@ import {
     FETCH_USERS,
     VALID_USER,
     ERROR_USER,
-    GET_USER_COUNT, LOGOUT_USER
+    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT
 } from "./types";
 import axios from "axios";
 import * as api from '../API'
@@ -15,7 +15,6 @@ import {useDispatch} from "react-redux";
 
 
 export const fetchStudents = () => dispatch => {
-    console.log('fetching');
     axios.get(api.baseURL + 'students')
         .then(response => {
             dispatch({
@@ -30,7 +29,6 @@ export const fetchStudents = () => dispatch => {
 }
 
 export const fetchTeachers = () => dispatch => {
-    console.log('fetching');
     axios.get(api.baseURL + '/teachers')
         .then(response => {
             dispatch({
@@ -46,8 +44,7 @@ export const fetchTeachers = () => dispatch => {
 
 // const { user } = useSelector((store) => store?.user);
 export const fetchUser = () => dispatch => {
-    console.log('fetching');
-    axios.get(api.baseURL + '/students')//api.baseURL + 'deleteuser'
+    axios.get(api.baseURL + '/users')//api.baseURL + 'deleteuser'
         .then(response => {
             dispatch({
                 type: FETCH_USERS,
@@ -61,7 +58,6 @@ export const fetchUser = () => dispatch => {
 export const addUsers = (PostData) => async (dispatch) => {
     try {
         const response = await axios.post(api.baseURL + 'useradd', PostData)
-        console.log(response)
         if (response.status === 200) {
             if (response.data === 'username exists'){
                 dispatch({
@@ -77,7 +73,6 @@ export const addUsers = (PostData) => async (dispatch) => {
             }
 
         } else {
-            console.log('else ',response.data)
             dispatch({
                 type: ERROR_USER,
                 payload: response.data
@@ -90,20 +85,7 @@ export const addUsers = (PostData) => async (dispatch) => {
 
 }
 
-// export const loginUserValidation = (user) => async (dispatch) => {
-//     console.log('creating');
-//     try {
-//         const data= await api.validateUser(user);
-//         console.log('data ', data);
-//         dispatch({type: VALID_USER, payload: data });
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-
 export const deleteUsers = (id) => dispatch => {
-    console.log('creating');
     axios.delete(api.baseURL + 'deleteuser/'+ id)
         .then(response => {
                 dispatch({
@@ -118,25 +100,7 @@ export const deleteUsers = (id) => dispatch => {
     })
 }
 
-// export const getUserByID = async (id) => {
-//     const dispatch = useDispatch();
-//     console.log('get user by id');
-//     try {
-//         const response = await axios.get(api.baseURL + 'getsingleuser/' + id)
-//
-//         dispatch({
-//             type: GET_USER,
-//             payload: response
-//         })
-//     }catch(err) {
-//         console.log(err);
-//     }
-// }
-
-
-
 export const getUserByID = (id) => dispatch => {
-    console.log('get user by id');
     axios.get(api.baseURL + 'getsingleuser/'+ id)
         .then(response => {
                 dispatch({
@@ -162,9 +126,7 @@ export const logoutUser = () => dispatch => {
 export const upDateUser = (id, PostData) => dispatch => {
     axios.put(api.baseURL + 'updateuser/' + id , PostData)
         .then(response => {
-            console.log(response)
             if(response.status === 200){
-                console.log(response.data)
                 dispatch({
                     type: UPDATE_USER,
                     payload: response.data
@@ -175,21 +137,30 @@ export const upDateUser = (id, PostData) => dispatch => {
             }
         })
 
-
-        //alert("data updated successfully");
-
-
         .catch((err) => {
             console.log(err);
         })
 }
 
 export const getUserCount = () => dispatch => {
-    //console.log('get user by id');
     axios.get(api.baseURL + 'usercount/')
         .then(response => {
                 dispatch({
                     type: GET_USER_COUNT,
+                    payload: response
+                })
+            }
+
+        ).catch((err) => {
+        console.log(err);
+    })
+}
+
+export const getTeacherStatusCount = () => dispatch => {
+    axios.get(api.baseURL + 'teachercount/')
+        .then(response => {
+                dispatch({
+                    type: GET_TEACHER_STATUS_COUNT,
                     payload: response
                 })
             }

@@ -33,6 +33,8 @@ const format = (seconds) => {
     return `${mm}:${ss}`
 }
 
+let count = 0;
+
 
 
 function CustomVideoPlayerComponent() {
@@ -66,6 +68,7 @@ function CustomVideoPlayerComponent() {
     const {playing, muted, volume, playbackRate, played, seeking} = state;
     const playerRef = useRef(null);
     const playerContainerRef = useRef(null);
+    const controlRef = useRef(null);
 
     const handlePlayPause = () => {
         setState({...state, playing: !state.playing});
@@ -106,7 +109,18 @@ function CustomVideoPlayerComponent() {
     }
 
     const handleProgress = (changeState) => {
+
+        if(count>3){
+            controlRef.current.style.visibility = "hidden"
+            count = 0
+        }
+
+        if(controlRef.current.style.visibility === "visible"){
+            count+=1
+        }
+
         if(!state.seeking){setState({...state, ...changeState});}
+
     };
 
     const handleSeekChange = (e, newValue) => {
@@ -120,6 +134,11 @@ function CustomVideoPlayerComponent() {
     const handleSeekMouseUp = (e, newValue) => {
         setState({...state, seeking: false})
         playerRef.current.seekTo(newValue/100);
+    }
+
+    const handleMouseMove = () => {
+        controlRef.current.style.visibility = "visible";
+        count = 0;
     }
 
     const currentTime = playerRef.current ? playerRef.current.getCurrentTime(): '00:00';
@@ -138,9 +157,15 @@ function CustomVideoPlayerComponent() {
         <React.Fragment>
             <div style={{marginTop: "10px"}}/>
             <Container maxWidth="md">
-                <div ref={playerContainerRef} className={classes.playerWrapper}>
+                <div
+                    ref={playerContainerRef}
+                     className={classes.playerWrapper}
+                    onMouseMove={handleMouseMove}
+
+                >
                     <ReactPlayer
                         width={"100%"}
+                        height="550px"
                         url={assignedUrl}
                         muted={muted}
                         playing={playing}
@@ -152,6 +177,7 @@ function CustomVideoPlayerComponent() {
                         onProgress={handleProgress}
                     />
                     <PlayerControls
+                        ref={controlRef}
                         onPlayPause={handlePlayPause}
                         playing={playing}
                         onRewind={handleRewind}
@@ -174,7 +200,7 @@ function CustomVideoPlayerComponent() {
                         MediaPlayerName={playerName}
                     />
                 </div>
-                <p className="header-video-player"> Name of the video </p>
+                <p className="header-video-player"> VIDEO-01 </p>
                 <p className="header-video-player-comment-section"> Comment section
                 </p>
                 <div className="video-player-comment">
