@@ -1,5 +1,5 @@
 @mixin common-styles {
-  font-family: "Helvetica","Verdana", serif;
+  font-family: Roboto,"Helvetica","Verdana", serif;
 }
 .custom-row-container {
   border-radius: 10px;
@@ -9,22 +9,26 @@
   .custom-row-flex{
     display: flex;
     .custom-row-header{
-      font-size: 20.6px;
+      font-size: 16px;
       font-weight: bold;
+      width: 150px;
+      overflow: hidden;;
       @include common-styles;
     }
     .custom-row-description {
-      font-size: 15.86px;
+      font-size: 13px;
       font-weight: normal;
+      width: 80px;
+      font-style: italic;
       margin-top: -8px;
       margin-bottom: 9px;
       @include common-styles;
     }
     .custom-row-posted-time {
-      font-size: 15px;
+      font-size: 9px;
       font-style: italic;
       justify-content: right;
-      margin-left: 100px;
+      margin-left: 200px;
       color: #9E9E9A;
     }
   }
