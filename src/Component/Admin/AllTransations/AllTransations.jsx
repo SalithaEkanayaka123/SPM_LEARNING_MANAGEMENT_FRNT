@@ -10,13 +10,9 @@ function AllTransations () {
 
     const dispatch = useDispatch();
 
-    let response = useSelector((state) => state.paymentDetails.paymentDetails.records);
+    let data = useSelector((state) => state.paymentDetails.paymentDetails.records);
 
-    useEffect(() => {
-        dispatch(getallTransactions());
-    },[])
-
-    response = [
+    const response = [
         {"tid":"T001", "date":"2021/10/1","amount":10000.00, "description":"Course payment", "doneby":"STU001", "type":"income","courseid":"C001" },
         {"tid":"T002", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
         {"tid":"T003", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C001" },
@@ -25,7 +21,14 @@ function AllTransations () {
         {"tid":"T006", "date":"2021/10/1","amount":500.00, "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
         {"tid":"T007", "date":"2021/10/1","amount":1500000.00, "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C002" }
     ]
-    const [transactionData, setTransactionData] = useState(response)
+    const [transactionData, setTransactionData] = useState(response);
+    const [searchTerm, setSearchTerm] = useState("");
+    console.log('transactionData ',transactionData)
+
+    useEffect(() => {
+        dispatch(getallTransactions());
+        setTransactionData({...transactionData, data})
+    },[])
 
     return(
         <div className="AllTransations-continer">
@@ -48,7 +51,13 @@ function AllTransations () {
                         <th className='table-head-row-col'>Type</th>
                         <th className='table-head-row-col'>Course ID</th>
                     </tr>
-                    {response?.map((row,index) => (
+                    {response?.filter((val) => {
+                        if(searchTerm == ""){
+                            return val
+                        }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){
+                            return val
+                        }
+                    })?.map((row,index) => (
                         <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>
                             <td className='table-data-row-col'>{row.tid}</td>
                             <td className='table-data-row-col'>{row.date}</td>
@@ -58,8 +67,20 @@ function AllTransations () {
                             <td className='table-data-row-col'>{row.type}</td>
                             <td className='table-data-row-col'>{row.courseid}</td>
                         </tr>
+                    )) }
 
-                    ))}
+                    {/*{response?.map((row,index) => (*/}
+                    {/*    <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>*/}
+                    {/*        <td className='table-data-row-col'>{row.tid}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.date}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.amount}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.description}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.doneby}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.type}</td>*/}
+                    {/*        <td className='table-data-row-col'>{row.courseid}</td>*/}
+                    {/*    </tr>*/}
+
+                    {/*))}*/}
                 </table>
                 <div>
                     <div className="button-item">

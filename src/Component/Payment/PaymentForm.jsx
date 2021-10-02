@@ -9,7 +9,7 @@ import {addPayment} from "../../Action/Payment";
 import {useDispatch} from "react-redux";
 
 
-function PaymentForm({row}) {
+function PaymentForm({row , setStatus, keyvalue}) {
 
     const [show, setShow] = useState(false);
 
@@ -19,6 +19,7 @@ function PaymentForm({row}) {
     const [description, setDescription] = useState('course enrollment');
     const [doneby, setDoneby] = useState('STU001');
     const [type, setType] = useState('income');
+
     const dispatch = useDispatch();
 
 
@@ -32,7 +33,9 @@ function PaymentForm({row}) {
             type
         }
         console.log(newPayment);
-        dispatch(addPayment(newPayment));
+        const value = dispatch(addPayment(newPayment));
+        setStatus(keyvalue);
+        handleModal();
     }
 
 
