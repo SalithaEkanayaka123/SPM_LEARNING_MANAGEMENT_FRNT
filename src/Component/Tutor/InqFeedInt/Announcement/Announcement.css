@@ -45,6 +45,7 @@
 }
 .announcement-container .announcement-body .announcement-body-button-group {
   margin-top: 10px;
+  margin-left: 45px;
   display: flex;
 }
 .announcement-container .announcement-body .announcement-body-button-group .announcement-button {

@@ -86,7 +86,7 @@ function AllTransations ({response}) {
                     <div className="button-item">
                         <Link to={{
                             pathname: '/report',
-                            age: {type: "tutor3"}
+                            age: {type: "admin2"}
                         }}><Button primary={true}>Generate Report</Button></Link>
                     </div>
                 </div>

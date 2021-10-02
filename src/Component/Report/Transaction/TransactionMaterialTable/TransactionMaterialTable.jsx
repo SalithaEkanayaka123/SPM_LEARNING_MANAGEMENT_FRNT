@@ -1,16 +1,15 @@
-import React, {useEffect, useState} from 'react'
-import Table from '@material-ui/core/Table';
-import TableBody from "@material-ui/core/TableBody";
-import TableRow from "@material-ui/core/TableRow";
-import TableHead from "@material-ui/core/TableHead";
-import {makeStyles, TableCell, TextField} from "@material-ui/core";
+import React from "react";
+import {makeStyles, TableCell} from "@material-ui/core";
 import TableContainer from "@material-ui/core/TableContainer";
 import Paper from "@material-ui/core/Paper";
-import {useDispatch} from "react-redux";
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import TableBody from "@material-ui/core/TableBody";
 import TablePagination from "@material-ui/core/TablePagination";
-import './CourseReportTable.scss'
-import CustomRow from "../../../../CourseMgntInt/CustomRow/CustomRow";
-function CourseReportTable({array}) {
+import("./TransactionMaterialTable.scss");
+
+function TransactionMaterialTable({array}) {
 
     console.log(array);
 
@@ -57,25 +56,33 @@ function CourseReportTable({array}) {
 
     return (
         <React.Fragment>
-            <div className="report-course-table-container">
+            <div className="transaction-table-container">
                 <div className="teacher-table-title-header">
-                    <h1 className="title-header">Course Content</h1>
+                    <h1 className="transaction-title-header">Course Content</h1>
                 </div>
                 <TableContainer component={Paper} className={classes.sampleContent}>
                     <Table padding={"none"} className={classes.table} aria-label="simple table">
                         <TableHead className={classes.tableHead}>
                             <TableRow>
-                                <TableCell align="center" className={classes.tableHeaderColumns}>Course Name</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Transaction ID</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Date</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Amount</TableCell>
                                 <TableCell align="center" className={classes.tableHeaderColumns}>Description</TableCell>
-                                <TableCell align="center" className={classes.tableHeaderColumns}>Status</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Done By</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Type</TableCell>
+                                <TableCell align="center" className={classes.tableHeaderColumns}>Course ID</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {array?.map((item) => (
+                            {array?.map((row) => (
                                 <TableRow>
-                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="table-column">{item.title}</div></TableCell>
-                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="table-column">{item.description}</div></TableCell>
-                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="table-column-bold">{item.status}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.tid}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.date}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.amount}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.description}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.doneby}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.type}</div></TableCell>
+                                    <TableCell align="center" className={classes.tableHeaderColumns}><div className="transaction-table-column">{row.courseid}</div></TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
@@ -99,5 +106,4 @@ function CourseReportTable({array}) {
         </React.Fragment>
     )
 }
-
-export default  CourseReportTable
+export default TransactionMaterialTable;

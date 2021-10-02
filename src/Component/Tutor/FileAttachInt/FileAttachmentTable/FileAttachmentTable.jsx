@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
         maxWidth: "100%",
-        maxHeight: 500,
+        maxHeight: 440,
     },
     tableHeaderCell: {
         fontWeight: 'bold',
@@ -71,7 +71,7 @@ export default function FileAttachmentTable({status}) {
 
     useEffect(() => {
         getItems();
-    }, [status])
+    }, [])
 
     async function getItems() {
         const response = await axios.get("http://localhost:8073/api/files");
@@ -86,6 +86,7 @@ export default function FileAttachmentTable({status}) {
             "course": item.course,
             "userGivenName": item.userGivenName,
         }))
+        setTableOptions([]);
         setTableOptions(options);
     }
 
@@ -123,7 +124,7 @@ export default function FileAttachmentTable({status}) {
     return (
         <Paper className={classes.paper}>
             <TableContainer className={classes.tableContainer} component={Paper}>
-                <Table stickyHeader className={classes.table} aria-label="simple table">
+                <Table stickyHeader className={classes.table} aria-label="sticky table">
                     <TableHead>
                         <TableRow>
                             <TableCell className={classes.tableHeaderCell}>File Name</TableCell>
@@ -139,7 +140,7 @@ export default function FileAttachmentTable({status}) {
                     </TableHead>
                     <TableBody>
                         {tableoptions.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => (
-                            <TableRow key={row.name}>
+                            <TableRow key={row.name} tabIndex={-1}>
                                 <TableCell className={classes.name} component="th" scope="row">
                                     <div className="table-cell-overflow">{row.name}</div>
                                 </TableCell>

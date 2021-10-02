@@ -1,10 +1,9 @@
-import './PrintableComponent.scss'
-import {Button} from "@progress/kendo-react-buttons";
-import {PDFExport} from "@progress/kendo-react-pdf";
+import './styles.scss'
+import "./PrintableComponent.scss"
 import React from "react";
-import Logo from "../../companyLogo/Logo.png";
-import {Chart, ChartSeries, ChartSeriesItem, ChartSeriesLabels} from "@progress/kendo-react-charts";
+import Logo from "./Logo.png";
 import responce from "./TransactionData.json";
+import TransactionMaterialTable from "./TransactionMaterialTable/TransactionMaterialTable";
 class TransactionReport extends React.Component {
     render() {
         return (
@@ -14,7 +13,7 @@ class TransactionReport extends React.Component {
                         <div className="inner-page">
                             <div className="pdf-header">
 								<span className="company-logo">
-									<img className="company-image" src={Logo} alt="Kendoka Company Logo"/> Tutor Video Resource Report
+									<img className="company-image" src={Logo} alt="Kendoka Company Logo"/> Payment report
 								</span>
                             </div>
                             <div className="pdf-footer">
@@ -50,34 +49,35 @@ class TransactionReport extends React.Component {
                             </div>
                             <div className="pdf-chart">
                             {/*    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
-                                <table className='Trasaction-table-container'>
-                                    <tr className='Trasaction-table-header'>
-                                        <th className='table-head-row-col'>Transaction ID</th>
-                                        <th className='table-head-row-col'>Date</th>
-                                        <th className='table-head-row-col'>Amount</th>
-                                        <th className='table-head-row-col'>Description</th>
-                                        <th className='table-head-row-col'>Done By</th>
-                                        <th className='table-head-row-col'>Type</th>
-                                        <th className='table-head-row-col'>Course ID</th>
-                                    </tr>
-                                    {responce.map((row,index) => (
-                                        <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>
-                                            <td className='table-data-row-col'>{row.tid}</td>
-                                            <td className='table-data-row-col'>{row.date}</td>
-                                            <td className='table-data-row-col'>{row.amount}</td>
-                                            <td className='table-data-row-col'>{row.description}</td>
-                                            <td className='table-data-row-col'>{row.doneby}</td>
-                                            <td className='table-data-row-col'>{row.type}</td>
-                                            <td className='table-data-row-col'>{row.courseid}</td>
-                                        </tr>
+                            {/*    <table className='Trasaction-table-container'>*/}
+                            {/*        <tr className='Trasaction-table-header'>*/}
+                            {/*            <th className='table-head-row-col'>Transaction ID</th>*/}
+                            {/*            <th className='table-head-row-col'>Date</th>*/}
+                            {/*            <th className='table-head-row-col'>Amount</th>*/}
+                            {/*            <th className='table-head-row-col'>Description</th>*/}
+                            {/*            <th className='table-head-row-col'>Done By</th>*/}
+                            {/*            <th className='table-head-row-col'>Type</th>*/}
+                            {/*            <th className='table-head-row-col'>Course ID</th>*/}
+                            {/*        </tr>*/}
+                            {/*        {responce.map((row,index) => (*/}
+                            {/*            <tr  className={ row.type == 'income' ? 'Trasaction-table-data-income' :'Trasaction-table-data'} key={index}>*/}
+                            {/*                <td className='table-data-row-col'>{row.tid}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.date}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.amount}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.description}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.doneby}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.type}</td>*/}
+                            {/*                <td className='table-data-row-col'>{row.courseid}</td>*/}
+                            {/*            </tr>*/}
 
-                                    ))}
-                                </table>
+                            {/*        ))}*/}
+                            {/*    </table>*/}
                                 {/*    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */}
+                               <TransactionMaterialTable array={responce}/>
+
                             </div>
                             <div className="pdf-body">
                                 <div className="custom-grid" id="grid">
-                                    <div> Content Comes Here! </div>
                                 </div>
                             </div>
                         </div>

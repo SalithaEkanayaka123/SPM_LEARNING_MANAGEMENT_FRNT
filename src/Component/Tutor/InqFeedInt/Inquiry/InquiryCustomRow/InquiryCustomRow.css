@@ -11,14 +11,14 @@
   display: flex;
 }
 .inquiry-custom-row-container .inquiry-custom-row-flex .inquiry-custom-row-header {
-  font-size: 20.6px;
+  font-size: 16.6px;
   font-weight: bold;
   overflow: hidden;
   font-family: "Helvetica", "Verdana", serif;
   padding: 10px;
 }
 .inquiry-custom-row-container .inquiry-custom-row-flex .inquiry-custom-row-description {
-  font-size: 15.86px;
+  font-size: 12.86px;
   font-weight: normal;
   margin-top: -25px;
   margin-bottom: 9px;
