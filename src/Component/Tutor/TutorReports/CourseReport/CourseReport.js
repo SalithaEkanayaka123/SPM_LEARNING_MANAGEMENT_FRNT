@@ -2,6 +2,7 @@ import './CourseReport.scss'
 import React from "react";
 import Logo from "../../../../Pages/TutorReportPage/companyLogo/Logo.png";
 import axios from "axios";
+import CourseReportTable from "./DataSet/SampleTable/CourseReportTable";
 class CourseReport extends React.Component {
 
     state = {
@@ -62,7 +63,7 @@ class CourseReport extends React.Component {
                                     </div>
                                 </div>
                                 <div className="pdf-chart">
-                                    {/*table should come here.*/}
+                                    <CourseReportTable/>
                                 </div>
                                 <div className="pdf-body">
                                     <div className="custom-grid" id="grid">
