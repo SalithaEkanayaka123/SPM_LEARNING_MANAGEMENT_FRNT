@@ -47,7 +47,7 @@ function TutorDashboard() {
     }, [])
 
     const response = useSelector((state) => state.userDetails1?.usercount?.data);
-    const response1 = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
+    const response1 = useSelector((state) => state.userDetails1?.UserDetails?.studentRecords?.data);
     console.log(response1);
     useEffect(()=> {
         dispatch(getUserCount())

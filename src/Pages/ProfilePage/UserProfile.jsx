@@ -100,7 +100,7 @@ const UserProfile = () => {
                             <h2 className="userprofile1-info-main">Taneesha</h2>
                             <div className="profitable-group">
                                 <button className="userprofile-button1" onClick={updateEmail}>Update My Personal Details</button><br/>
-                                <button className="userprofile-button1" onClick={updatePassword}>Update Password</button><br/>
+                                {/*<button className="userprofile-button1" onClick={updatePassword}>Update Password</button><br/>*/}
                                 <button className="userprofile-button1">My Transactions</button><br/>
                                 <button  className="userprofile-button2" onClick={handleShow}>Delete My Account</button><br/>
 

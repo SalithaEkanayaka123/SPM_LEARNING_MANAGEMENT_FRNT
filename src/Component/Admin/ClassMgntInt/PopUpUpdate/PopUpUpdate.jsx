@@ -10,7 +10,7 @@ function PopUpUpdate(props) {
     const [description, setDescription] = useState('');
     const [tutorName, setTutorName] = useState('name1');
     const [teacherOptions, setTeacherOptions] = useState(null);
-    const teacherResponse = useSelector((state) => state.userDetails1?.UserDetails?.records?.data);
+    const teacherResponse = useSelector((state) => state.userDetails1?.UserDetails?.teacherRecords?.data);
 
     function popupView() {
         const classData = {

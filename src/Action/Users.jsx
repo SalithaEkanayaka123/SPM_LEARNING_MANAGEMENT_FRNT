@@ -6,7 +6,7 @@ import {
     FETCH_USERS,
     VALID_USER,
     ERROR_USER,
-    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT
+    GET_USER_COUNT, LOGOUT_USER, GET_TEACHER_STATUS_COUNT, FETCH_STUDENTS, FETCH_TEACHERS
 } from "./types";
 import axios from "axios";
 import * as api from '../API'
@@ -17,8 +17,9 @@ import {useDispatch} from "react-redux";
 export const fetchStudents = () => dispatch => {
     axios.get(api.baseURL + 'students')
         .then(response => {
+            console.log(response)
             dispatch({
-                type: FETCH_USERS,
+                type: FETCH_STUDENTS,
                 payload: response
             })}
 
@@ -32,7 +33,7 @@ export const fetchTeachers = () => dispatch => {
     axios.get(api.baseURL + '/teachers')
         .then(response => {
             dispatch({
-                type: FETCH_USERS,
+                type: FETCH_TEACHERS,
                 payload: response
             })}
 

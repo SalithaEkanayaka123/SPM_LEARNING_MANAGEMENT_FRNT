@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "./HomeLanding.css"
 
 import CustomizeSection from "./CustomizeSection/CustomizeSection";
@@ -19,6 +19,7 @@ import Book2 from '../Class/CourseTile/Image/book2.svg'
 import Book6 from '../Class/CourseTile/Image/books6.svg'
 import {useDispatch, useSelector} from "react-redux";
 import {getClasses, getClassesNew} from "../../Action/Class";
+import {fetchTeachers} from "../../Action/Users";
 
 
 
@@ -31,6 +32,10 @@ function HomeLanding() {
     const data = useSelector((state) => state.images?.classNewRecords?.records);
     React.useEffect(() => {
         dispatch(getClassesNew());
+    }, []);
+
+    useEffect(()=> {
+        dispatch(fetchTeachers());
     }, []);
 
     return (
