@@ -48,6 +48,16 @@ function AdminDashboard() {
     }, [])
 
 
+    const Arrayx  = [
+        {"tid":"T001", "date":"2021/10/1","amount":"10000.00", "description":"Course payment", "doneby":"STU001", "type":"income","courseid":"C001" },
+        {"tid":"T002", "date":"2021/10/1","amount":"500.00", "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T003", "date":"2021/10/1","amount":"1500000.00", "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C001" },
+        {"tid":"T004", "date":"2021/10/1","amount":"10000.00", "description":"Course payment", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T005", "date":"2021/10/1","amount":"10000.00", "description":"Course payment", "doneby":"STU003", "type":"income","courseid":"C001" },
+        {"tid":"T006", "date":"2021/10/1","amount":"500.00", "description":"material pay", "doneby":"STU002", "type":"income","courseid":"C001" },
+        {"tid":"T007", "date":"2021/10/1","amount":"1500000.00", "description":"Teacher salary", "doneby":"AD001", "type":"expence","courseid":"C002" }
+    ]
+
     //Array for the announcement component.
     const array1 = [
         {"header":"Announcement 1", "description":"New News Update available"},
@@ -75,7 +85,7 @@ function AdminDashboard() {
                 <ClassMgntInt/>
                 <ClassDetailsTable method={setTableClass}/>
             </div>
-            <AllTransations/>
+            <AllTransations  response={Arrayx}/>
             <br/>
             <TeacherTableComponent teacherdetails = {teacherDetails}/>
             <br/>
@@ -109,6 +119,7 @@ function AdminDashboard() {
                     >Check Announcement Report</Button>
                 </Link>
             </div>
+            <AllTransations/>
         <br/>
             <Footer/>
         </div>

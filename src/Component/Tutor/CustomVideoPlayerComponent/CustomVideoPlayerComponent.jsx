@@ -110,7 +110,7 @@ function CustomVideoPlayerComponent() {
 
     const handleProgress = (changeState) => {
 
-        if(count>3){
+        if(count>1){
             controlRef.current.style.visibility = "hidden"
             count = 0
         }
